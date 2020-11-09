@@ -4,8 +4,8 @@ Purpose is to create a warehouse and allow users to locate products and view oth
 """
 
 class Helper:
-    """
-    Purpose:
+    """The purpose of this class is to 
+    
     Attributes:
     
     """
@@ -18,5 +18,9 @@ class Helper:
         what item they are looking for
         
         Attributes:
+            general_categories(list or dict): Gives the user an option to choose between 5 general categories of the warehouse store which consists of electronics, paper products, dairy, bakery, and furniture
             
          """
+         #Ask user if they would like to search for a specific product or choose from our list of categories
+         #If user answers yes to type in specific product, take them to the product
+         #If user answers no, prompt user to pick from selected categories 
