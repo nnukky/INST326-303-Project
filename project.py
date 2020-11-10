@@ -7,8 +7,7 @@ class Helper:
     """
     The purpose of this class is to help a user identify and locate items that they are looking for in our fictional warehouse.
     Attributes:
-        categories (dict) : This is a dictionary that identifies the item name and which category it is associated with.
-        items (dict) : This is a dictionary that identifies the item name as the key and a tuple of its attributes as the value.
+        warehouse (dict) : This is a dictionary that identifies the item name (ex: whole milk) as the key and a tuple of its attributes (ex: $2.99, 3 in stock, dairy, aisle 5) as the value.
     
     """
     def __init__(self):
