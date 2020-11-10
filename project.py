@@ -55,8 +55,10 @@ class Helper:
         # Bakery: What type? Brand?
         # Furniture: What size? Color? Room type?
     
-    def item_attributes(self) :
+    def item_attributes(self, item) :
         """ This method will return the attributes of the item that the user is searching for.
+        Args :
+            item (str) : the name of the item being searched
         Raises :
             ValueError: raised if an item does not exist in the store
         """
