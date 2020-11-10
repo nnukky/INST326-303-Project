@@ -12,18 +12,31 @@ class Helper:
     def __init__(self):
         """The Purpose of this method is to initilize new attributes"""
         
+        #self.categories = {}
+        #self.price = {}
         
-    def categories(self):
+    def categories_search(self):
         """The purpose of this method is to help get the user to identitify 
         what item they are looking for
         
         Attributes:
-            general_categories(list or dict): Gives the user an option to choose between 5 general categories of the warehouse store which consists of electronics, paper products, dairy, bakery, and furniture
-            
+            categories(list or dict): Gives the user an option to choose between 5 general categories of the warehouse store which consists of electronics, paper products, dairy, bakery, and furniture
+
+
          """
          #Ask user if they would like to search for a specific product or choose from our list of categories
          #If user answers yes to type in specific product, take them to the product
          #If user answers no, prompt user to pick from selected categories
+    
+    def price_search(self):
+        """The purpose of this funtion is to allow a customer to search by price of items
+        
+        Attributes:
+            self.price
+        
+        Raises:
+            ValueError: Value error is price is entered correctly
+        """     
          
     def suggestions(self):
         """
