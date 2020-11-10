@@ -1,6 +1,6 @@
 """
 INST 326 Final Project
-Purpose is to create a warehouse and allow users to locate products and view other features associated with them.
+Purpose is to create a fictional warehouse and allow users to locate products and view other features associated with them.
 """
 
 class Helper:
@@ -112,7 +112,7 @@ class Helper:
     def check_cart(self, cart):
         """
         Purpose is to get a summary of what is currently in user's cart
-        Parameters: (dict) cart - items on cart 
+        Parameters: (dict) cart - items on cart, along with their corresponding attributes (price, aisle, department, # in stock) 
         Returns: none
         Side Effects: Prints to console
         """    
