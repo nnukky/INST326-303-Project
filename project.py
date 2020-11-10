@@ -83,7 +83,7 @@ class Helper:
     def create_store(self):
         """
         Purpose is to create the warehouse along with the items, prices, aisles, departments, and amount in stock
-        Returns: (list) warehouse - list of tuples that contain each item, price, aisle, department, and amount in stock
+        Returns: (dict) warehouse - dict of tuples that contain with key as item name and values (price, aisle, department, #in stock) in tuple
         Side Effects: none
         """
     def check_cart(self, item, price):
