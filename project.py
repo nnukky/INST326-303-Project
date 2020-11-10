@@ -60,8 +60,10 @@ class Helper:
         # Bakery: What type? Brand?
         # Furniture: What size? Color? Room type?
     
-    def item_attributes(self) :
+    def item_attributes(self, item) :
         """ This method will return the attributes of the item that the user is searching for.
+        Args :
+            item (str) : the name of the item being searched
         Raises :
             ValueError: raised if an item does not exist in the store
         """
@@ -93,6 +95,7 @@ class Helper:
         Returns: (dict) warehouse - dict of tuples that contain with key as item name and values (price, aisle, department, #in stock) in tuple
         Side Effects: none
         """
+        #example format: {item1:(price, aisle, department, # in stock), item2:...}
     def check_cart(self, item, price):
         """
         Purpose is to get a summary of what is currently in user's cart
@@ -102,3 +105,4 @@ class Helper:
         Returns: none
         Side Effects: Prints to console
         """    
+        #example format: Item: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
