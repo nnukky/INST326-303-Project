@@ -15,7 +15,7 @@ class Helper:
         """The Purpose of this method is to initilize new attributes"""
         
         #self.categories = {}
-        #self.items = {}
+        #self.warehouse = {}
         
     def categories_search(self):
         """The purpose of this method is to help get the user to identitify 
