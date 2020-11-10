@@ -84,6 +84,7 @@ class Helper:
         Returns:
             List of suggested items to purchase
         """
+        #Looks at the department of items in their cart and recommend items based on what's in their cart.
         
     def create_store(self):
         """
@@ -108,3 +109,5 @@ class Helper:
             ValueError: if total cost is less than 0
         Returns:
             float of the final total cost"""
+            
+        #Look at the items(and quantity) of a customer's cart to find out the total price
