@@ -8,6 +8,10 @@ class Helper:
     The purpose of this class is to help a user identify and locate items that they are looking for in our fictional warehouse.
     Attributes:
         warehouse (dict) : This is a dictionary that identifies the item name (ex: whole milk) as the key and a tuple of its attributes (ex: $2.99, 3 in stock, dairy, aisle 5) as the value.
+        cart (dict) :
+        price (float) :
+        category (str) :
+        item (str) :
     
     """
     def __init__(self):
@@ -84,14 +88,6 @@ class Helper:
             List of suggested items to purchase
         """
         
-    def cart_total(self):
-        """
-        Add up the cost of all items in a customer's cart and show them
-        Raises:
-            ValueError: if total cost is less than 0
-        Returns:
-            float of the final total cost
-        """
     def create_store(self):
         """
         Purpose is to create the warehouse along with the items, prices, aisles, departments, and amount in stock
@@ -109,3 +105,11 @@ class Helper:
         Side Effects: Prints to console
         """    
         #example format: Item: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
+        
+    def cart_total(self):
+        """
+        Add up the cost of all items in a customer's cart and show them
+        Raises:
+            ValueError: if total cost is less than 0
+        Returns:
+            float of the final total cost"""
