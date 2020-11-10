@@ -4,8 +4,8 @@ Purpose is to create a warehouse and allow users to locate products and view oth
 """
 
 class Helper:
-    """The purpose of this class is to 
-    
+    """
+    The purpose of this class is to help a user identify and locate items that they are looking for in our fictional warehouse.
     Attributes:
     
     """
@@ -37,3 +37,20 @@ class Helper:
         """
         
         """
+    def create_store(self):
+        """
+        Purpose is to create the warehouse along with the items, prices, aisles, departments, and amount in stock
+        Parameters: none
+        Returns: (list) warehouse - list of tuples that contain each item, price, aisle, department, and amount in stock
+        Side Effects: none
+        """
+    def check_cart(self, item, price):
+        """
+        Purpose is to get a summary of what is currently in user's cart
+        Parameters:
+            (str) item
+            (float) price
+        Returns: none
+        Side Effects: Prints to console
+        """    
+     
