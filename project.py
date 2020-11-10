@@ -7,13 +7,15 @@ class Helper:
     """
     The purpose of this class is to help a user identify and locate items that they are looking for in our fictional warehouse.
     Attributes:
+        categories (dict) : This is a dictionary that identifies the item name and which category it is associated with.
+        items (dict) : This is a dictionary that identifies the item name as the key and a tuple of its attributes as the value.
     
     """
     def __init__(self):
         """The Purpose of this method is to initilize new attributes"""
         
         #self.categories = {}
-        #self.price = {}
+        #self.items = {}
         
     def categories_search(self):
         """The purpose of this method is to help get the user to identitify 
