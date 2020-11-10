@@ -29,8 +29,6 @@ class Helper:
         """
         This method will look at items in the customer's cart and recommend them 
         items to purchase that are frequently bought together
-        Args:
-            cart_parameter (list): A list containing items in a customer's cart
         Raises:
             ValueError: Value error if a suggested item is out of stock
         """
