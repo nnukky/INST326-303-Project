@@ -35,6 +35,8 @@ class Helper:
         Parameters:
             warehouse(dict): Gives the user an option to choose between 5 general categories of the warehouse store which consists of electronics, paper products, dairy, bakery, and furniture
 
+        Raises:
+            TypeError: raised if value isn't typed in correctly into input
         Return:
             #return list of 4 products from each category
             or
