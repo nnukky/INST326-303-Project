@@ -96,12 +96,10 @@ class Helper:
         Side Effects: none
         """
         #example format: {item1:(price, aisle, department, # in stock), item2:...}
-    def check_cart(self, item, price):
+    def check_cart(self, cart):
         """
         Purpose is to get a summary of what is currently in user's cart
-        Parameters:
-            (str) item
-            (float) price
+        Parameters: (dict) cart - items on cart 
         Returns: none
         Side Effects: Prints to console
         """    
