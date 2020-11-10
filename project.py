@@ -68,16 +68,21 @@ class Helper:
         items to purchase that are frequently bought together
         Raises:
             ValueError: Value error if a suggested item is out of stock
+        Returns:
+            List of suggested items to purchase
         """
         
     def cart_total(self):
         """
-        
+        Add up the cost of all items in a customer's cart and show them
+        Raises:
+            ValueError: if total cost is less than 0
+        Returns:
+            float of the final total cost
         """
     def create_store(self):
         """
         Purpose is to create the warehouse along with the items, prices, aisles, departments, and amount in stock
-        Parameters: none
         Returns: (list) warehouse - list of tuples that contain each item, price, aisle, department, and amount in stock
         Side Effects: none
         """
@@ -90,4 +95,3 @@ class Helper:
         Returns: none
         Side Effects: Prints to console
         """    
-     
