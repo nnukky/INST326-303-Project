@@ -20,24 +20,48 @@ class Helper:
         what item they are looking for
         
         Attributes:
-            categories(list or dict): Gives the user an option to choose between 5 general categories of the warehouse store which consists of electronics, paper products, dairy, bakery, and furniture
+            categories(dict): Gives the user an option to choose between 5 general categories of the warehouse store which consists of electronics, paper products, dairy, bakery, and furniture
 
 
          """
          #Ask user if they would like to search for a specific product or choose from our list of categories
          #If user answers yes to type in specific product, take them to the product
          #If user answers no, prompt user to pick from selected categories
-    
+         #Won't return anything but will move onto another method to get noarrowed down
+         
     def price_search(self):
         """The purpose of this funtion is to allow a customer to search by price of items
         
         Attributes:
-            self.price
+            self.price(dict): Dictionary mapped to price of goods
         
         Raises:
             ValueError: Value error is price is entered correctly
         """     
          
+    def narrow_categories(self, category) :
+        """ Prompts the user with questions to help narrow down their item options even farther
+        Args: 
+            category (str) : the name of the category they are searching in
+        """
+        # First asks a user if they would like to search for a specific product after they browsed their options returned in the last method
+        # If the user answers yes, take them to that item
+        # If the user answers no, they will be prompted with different questions based on the category they have chosen
+        # Electronics: What brand? What type?
+        # Paper Products: Color? What type? Special Event?
+        # Dairy: What type? Brand?
+        # Bakery: What type? Brand?
+        # Furniture: What size? Color? Room type?
+    
+    def item_attributes(self) :
+        """ This method will return the attributes of the item that the user is searching for.
+        Raises :
+            ValueError: raised if an item does not exist in the store
+        """
+        # pull information such as price, aisle, department and amount in stock related to the searched item from the database
+        # will return this information to the user
+        
+    
     def suggestions(self):
         """
         This method will look at items in the customer's cart and recommend them 
