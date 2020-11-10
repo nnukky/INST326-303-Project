@@ -16,7 +16,7 @@ class Helper:
     """
     def __init__(self):
         """
-        The Purpose of this method is to initilize new attributes
+        The purpose of this method is to initilize new attributes
         Parameters: none
         Returns: none
         Side effects: none
@@ -27,7 +27,7 @@ class Helper:
         #self.category = category
         #self.item = item
         
-    def categories_search(self):
+    def categories_search(self, warehouse):
         """
         The purpose of this method is to help get the user to identitify 
         what item they are looking for
@@ -48,7 +48,7 @@ class Helper:
          #If user answers no, prompt user to pick from selected categories
          #return 4 products from the specific category
          
-    def price_search(self):
+    def price_search(self, price):
         """The purpose of this funtion is to allow a customer to search by price of items
         
         Parameters:
@@ -97,11 +97,11 @@ class Helper:
         # will return this information to the user
         
     
-    def suggestions(self):
+    def suggestions(self, cart):
         """
         Purpose is to look at items in the customer's cart and recommend them 
         items to purchase that are frequently bought together
-        Parameters: none
+        Parameters: (dict) cart - items on cart, along with their corresponding attributes (price, aisle, department, # in stock) 
         Raises:
             ValueError: Value error if a suggested item is out of stock
         Returns:
@@ -129,10 +129,10 @@ class Helper:
         """    
         #example format: Item: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
         
-    def cart_total(self):
+    def cart_total(self, cart):
         """
         Purpose is to add up the cost of all items in a customer's cart and show them
-        Parameters: none
+        Parameters: (dict) cart - items on cart, along with their corresponding attributes (price, aisle, department, # in stock) 
         Raises:
             ValueError: if total cost is less than 0
         Returns:
