@@ -12,8 +12,11 @@ class Helper:
     """
     def __init__(self):
         """The Purpose of this method is to initilize new attributes"""
-        
         #self.warehouse = {}
+        #self.cart
+        #self.price
+        #self.category
+        #self.item
         
     def categories_search(self):
         """The purpose of this method is to help get the user to identitify 
