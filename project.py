@@ -15,7 +15,12 @@ class Helper:
     
     """
     def __init__(self):
-        """The Purpose of this method is to initilize new attributes"""
+        """
+        The Purpose of this method is to initilize new attributes
+        Parameters: none
+        Returns: none
+        Side effects: none
+        """
         #self.warehouse = {}
         #self.cart = {}
         #self.price = float
@@ -23,7 +28,8 @@ class Helper:
         #self.item = item
         
     def categories_search(self):
-        """The purpose of this method is to help get the user to identitify 
+        """
+        The purpose of this method is to help get the user to identitify 
         what item they are looking for
         
         Parameters:
@@ -31,6 +37,7 @@ class Helper:
 
         Return:
             #retun list of 4 products from each category
+        Side effects: none    
          """
          #Ask user if they would like to search for a specific product or choose from our list of categories
          #If user answers yes to type in specific product, take them to the product
@@ -54,9 +61,11 @@ class Helper:
          
          
     def narrow_categories(self, category) :
-        """ Prompts the user with questions to help narrow down their item options even farther
-        Args: 
-            category (str) : the name of the category they are searching in
+        """ 
+        Purpose it to prompts the user with questions to help narrow down their item options even farther
+        Parameters: category (str) : the name of the category they are searching in
+        Returns: none
+        Side effects: prints to console         
         """
         # First asks a user if they would like to search for a specific product after they browsed their options returned in the last method
         # If the user answers yes, take them to that item
@@ -68,11 +77,13 @@ class Helper:
         # Furniture: What size? Color? Room type?
     
     def item_attributes(self, item) :
-        """ This method will return the attributes of the item that the user is searching for.
-        Args :
+        """ 
+        Purpose it to return the attributes of the item that the user is searching for.
+        Parameters :
             item (str) : the name of the item being searched
         Raises :
             ValueError: raised if an item does not exist in the store
+        Returns: (str) item information   
         """
         # pull information such as price, aisle, department and amount in stock related to the searched item from the database
         # will return this information to the user
@@ -80,18 +91,20 @@ class Helper:
     
     def suggestions(self):
         """
-        This method will look at items in the customer's cart and recommend them 
+        Purpose is to look at items in the customer's cart and recommend them 
         items to purchase that are frequently bought together
+        Parameters: none
         Raises:
             ValueError: Value error if a suggested item is out of stock
         Returns:
-            List of suggested items to purchase
+            (list) List of suggested items to purchase
         """
         #Looks at the department of items in their cart and recommend items based on what's in their cart.
         
     def create_store(self):
         """
         Purpose is to create the warehouse along with the items, prices, aisles, departments, and amount in stock
+        Parameters: none
         Returns: (dict) warehouse - dict of tuples that contain with key as item name and values (price, aisle, department, #in stock) in tuple
         Side Effects: none
         """
@@ -107,7 +120,8 @@ class Helper:
         
     def cart_total(self):
         """
-        Add up the cost of all items in a customer's cart and show them
+        Purpose is to add up the cost of all items in a customer's cart and show them
+        Parameters: none
         Raises:
             ValueError: if total cost is less than 0
         Returns:
