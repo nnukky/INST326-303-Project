@@ -13,7 +13,6 @@ class Helper:
     def __init__(self):
         """The Purpose of this method is to initilize new attributes"""
         
-        #self.categories = {}
         #self.warehouse = {}
         
     def categories_search(self):
@@ -23,7 +22,8 @@ class Helper:
         Attributes:
             categories(dict): Gives the user an option to choose between 5 general categories of the warehouse store which consists of electronics, paper products, dairy, bakery, and furniture
 
-
+        Return:
+            #retun list of 4 products from each category
          """
          #Ask user if they would like to search for a specific product or choose from our list of categories
          #If user answers yes to type in specific product, take them to the product
@@ -39,6 +39,7 @@ class Helper:
         Raises:
             ValueError: Value error is price is entered correctly
         """     
+         #prompt them to either search a specifc item again or seach by category
          
     def narrow_categories(self, category) :
         """ Prompts the user with questions to help narrow down their item options even farther
