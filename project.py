@@ -22,8 +22,8 @@ class Helper:
         """The purpose of this method is to help get the user to identitify 
         what item they are looking for
         
-        Attributes:
-            categories(dict): Gives the user an option to choose between 5 general categories of the warehouse store which consists of electronics, paper products, dairy, bakery, and furniture
+        Parameters:
+            warehouse(dict): Gives the user an option to choose between 5 general categories of the warehouse store which consists of electronics, paper products, dairy, bakery, and furniture
 
         Return:
             #retun list of 4 products from each category
@@ -36,11 +36,14 @@ class Helper:
     def price_search(self):
         """The purpose of this funtion is to allow a customer to search by price of items
         
-        Attributes:
+        Parameters:
             self.price(dict): Dictionary mapped to price of goods
         
         Raises:
             ValueError: Value error is price is entered correctly
+        
+        Returns:
+            #items at specific price    
         """     
         #optional price option from list of 4 products from specific category
         #return all items at that price
