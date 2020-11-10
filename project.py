@@ -81,14 +81,6 @@ class Helper:
             List of suggested items to purchase
         """
         
-    def cart_total(self):
-        """
-        Add up the cost of all items in a customer's cart and show them
-        Raises:
-            ValueError: if total cost is less than 0
-        Returns:
-            float of the final total cost
-        """
     def create_store(self):
         """
         Purpose is to create the warehouse along with the items, prices, aisles, departments, and amount in stock
@@ -106,3 +98,11 @@ class Helper:
         Side Effects: Prints to console
         """    
         #example format: Item: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
+        
+    def cart_total(self):
+        """
+        Add up the cost of all items in a customer's cart and show them
+        Raises:
+            ValueError: if total cost is less than 0
+        Returns:
+            float of the final total cost"""
