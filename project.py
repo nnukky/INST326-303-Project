@@ -37,6 +37,8 @@ class Helper:
 
         Return:
             #return list of 4 products from each category
+            or
+            #return specific item detail of that option is selected
         Side effects: none    
          """
          #Ask user if they would like to search for a specific product or choose from our list of categories
@@ -56,8 +58,9 @@ class Helper:
         Returns:
             #items at specific price    
         """     
-        #optional price option from list of 4 products from specific category
-        #return all items at that price
+        #optional price option from list of products from specific category
+        #return all items at that price within the specific category
+        #if they don't wish to search by price it will go to next method
          
          
     def narrow_categories(self, category) :
