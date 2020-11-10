@@ -28,7 +28,7 @@ class Helper:
          #Ask user if they would like to search for a specific product or choose from our list of categories
          #If user answers yes to type in specific product, take them to the product
          #If user answers no, prompt user to pick from selected categories
-         #Won't return anything but will move onto another method to get noarrowed down
+         #return 4 products from the specific category
          
     def price_search(self):
         """The purpose of this funtion is to allow a customer to search by price of items
@@ -39,7 +39,9 @@ class Helper:
         Raises:
             ValueError: Value error is price is entered correctly
         """     
-         #prompt them to either search a specifc item again or seach by category
+        #optional price option from list of 4 products from specific category
+        #return all items at that price
+         
          
     def narrow_categories(self, category) :
         """ Prompts the user with questions to help narrow down their item options even farther
@@ -90,6 +92,7 @@ class Helper:
         Returns: (dict) warehouse - dict of tuples that contain with key as item name and values (price, aisle, department, #in stock) in tuple
         Side Effects: none
         """
+        #example format: {item1:(price, aisle, department, # in stock), item2:...}
     def check_cart(self, item, price):
         """
         Purpose is to get a summary of what is currently in user's cart
@@ -99,3 +102,4 @@ class Helper:
         Returns: none
         Side Effects: Prints to console
         """    
+        #example format: Item: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
