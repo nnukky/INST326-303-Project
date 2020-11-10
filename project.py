@@ -23,7 +23,7 @@ class Helper:
         """
         #self.warehouse = {}
         #self.cart = {}
-        #self.price = float
+        #self.price = price
         #self.category = category
         #self.item = item
         
@@ -36,7 +36,7 @@ class Helper:
             warehouse(dict): Gives the user an option to choose between 5 general categories of the warehouse store which consists of electronics, paper products, dairy, bakery, and furniture
 
         Return:
-            #retun list of 4 products from each category
+            #return list of 4 products from each category
         Side effects: none    
          """
          #Ask user if they would like to search for a specific product or choose from our list of categories
@@ -62,10 +62,12 @@ class Helper:
          
     def narrow_categories(self, category) :
         """ 
-        Purpose it to prompts the user with questions to help narrow down their item options even farther
-        Parameters: category (str) : the name of the category they are searching in
+        Purpose is to prompt the user with questions to help narrow down their item options even farther
+        Parameters: 
+            category (str) : the name of the category they are searching in
         Returns: none
-        Side effects: prints to console         
+        Side effects: 
+            prints to console         
         """
         # First asks a user if they would like to search for a specific product after they browsed their options returned in the last method
         # If the user answers yes, take them to that item
@@ -78,12 +80,13 @@ class Helper:
     
     def item_attributes(self, item) :
         """ 
-        Purpose it to return the attributes of the item that the user is searching for.
+        Purpose is to return the attributes of the item that the user is searching for.
         Parameters :
             item (str) : the name of the item being searched
         Raises :
             ValueError: raised if an item does not exist in the store
-        Returns: (str) item information   
+        Returns: 
+            (str) item information   
         """
         # pull information such as price, aisle, department and amount in stock related to the searched item from the database
         # will return this information to the user
@@ -105,16 +108,19 @@ class Helper:
         """
         Purpose is to create the warehouse along with the items, prices, aisles, departments, and amount in stock
         Parameters: none
-        Returns: (dict) warehouse - dict of tuples that contain with key as item name and values (price, aisle, department, #in stock) in tuple
+        Returns: 
+            (dict) warehouse - dict of tuples that contain with key as item name and values (price, aisle, department, #in stock) in tuple
         Side Effects: none
         """
         #example format: {item1:(price, aisle, department, # in stock), item2:...}
     def check_cart(self, cart):
         """
         Purpose is to get a summary of what is currently in user's cart
-        Parameters: (dict) cart - items on cart, along with their corresponding attributes (price, aisle, department, # in stock) 
+        Parameters: 
+            (dict) cart - items on cart, along with their corresponding attributes (price, aisle, department, # in stock) 
         Returns: none
-        Side Effects: Prints to console
+        Side Effects: 
+            Prints to console
         """    
         #example format: Item: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
         
