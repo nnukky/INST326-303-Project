@@ -117,7 +117,9 @@ class Helper:
             (dict) warehouse - dict of tuples that contain with key as item name and values (price, aisle, department, #in stock) in tuple
         Side Effects: none
         """
-        #example format: {item1:(price, aisle, department, # in stock), item2:...}
+        #example format: {item1:(item, price, aisle, department, # in stock), item2:...}
+        self.warehouse={"item1":("milk",2.99, "aisle1", "department1", 1),"item2":("bread",1.29, "aisle2", "department2", 2)}
+        
     def check_cart(self, cart):
         """
         Purpose is to get a summary of what is currently in user's cart
@@ -128,6 +130,8 @@ class Helper:
             Prints to console
         """    
         #example format: Item: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
+        for item in self.cart:
+            print f"item: {self.cart[item][0]}, price: {self.cart[item][1]}, aisle: {self.cart[item][2]}, department: {self.cart[item][3]}, stock: {self.cart[item][4]}"
         
     def cart_total(self, cart):
         """
