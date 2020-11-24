@@ -82,6 +82,14 @@ class Helper:
         # Dairy: What type? Brand?
         # Bakery: What type? Brand?
         # Furniture: What size? Color? Room type?
+        
+        if category == "Electronics" :
+            brand = input("What brand are you looking for? ")
+            if brand == "Apple" :
+                return ["iPhone", "iPad", "Macbook"]
+            electronic_type = input("What type of electronic are you looking for? ")
+            if electronic_type == "phone"
+                return ["iPhone", "Android", "Blackberry"]
     
     def item_attributes(self, item) :
         """ 
@@ -95,6 +103,7 @@ class Helper:
         """
         # pull information such as price, aisle, department and amount in stock related to the searched item from the database
         # will return this information to the user
+        return self.warehouse[item]
         
     
     def suggestions(self, cart):
