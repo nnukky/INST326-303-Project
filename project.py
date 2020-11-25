@@ -1,79 +1,54 @@
 """
 INST 326 Final Project
-Purpose is to create a fictional warehouse and allow users to locate products and view other features associated with them.
+Purpose is to create a fictional warehouse and allow users to locate 
+products and view other features associated with them.
 """
+
+from argparse import ArgumentParser
+import sys
 
 class Helper:
     """
-    The purpose of this class is to help a user identify and locate items that they are looking for in our fictional warehouse.
+    Allows the user to filter through the store, add items to 
+    their cart, and checkout 
     Attributes:
-        warehouse (dict) : This is a dictionary that identifies the item name (ex: whole milk) as the key and a tuple of its attributes (ex: $2.99, 3 in stock, dairy, aisle 5) as the value.
-        cart (dict) : This dictionary contains item information of the items currently on user's cart
-        price (float) : price of item
-        category (str) : category of item (electronics, paper products, dairy, bakery, or furniture)
-        item (str) : name of item
-    
+        warehouse (dict): Contains the items available in the store and it's information
+        cart (dict): empty dictionary wih a customers cart
+        departments(list): list of departments in the store
     """
-    def __init__(self):
+    
+    def __init__(self, store):
         """
-        The purpose of this method is to initilize new attributes
-        Parameters: none
-        Returns: none
-        Side effects: none
-        """
-        #self.warehouse = {}
-        #self.cart = {}
-        #self.price = price
-        #self.category = category
-        #self.item = item
-        
-    def categories_search(self, warehouse):
-        """
-        The purpose of this method is to help get the user to identitify 
-        what item they are looking for
-        
-        Parameters:
-            warehouse(dict): Gives the user an option to choose between 5 general categories of the warehouse store which consists of electronics, paper products, dairy, bakery, and furniture
-
-        Raises:
-            TypeError: raised if value isn't typed in correctly into input
-        Return:
-            #return list of 4 products from each category
-            or
-            #return specific item detail of that option is selected
-        Side effects: none    
-         """
-         #Ask user if they would like to search for a specific product or choose from our list of categories
-         #If user answers yes to type in specific product, take them to the product
-         #If user answers no, prompt user to pick from selected categories
-         #return 4 products from the specific category
-         
-    def price_search(self, price):
-        """The purpose of this funtion is to allow a customer to search by price of items
-        
-        Parameters:
-            self.price(dict): Dictionary mapped to price of goods
-        
-        Raises:
-            ValueError: Value error is price is entered correctly
-        
-        Returns:
-            #items at specific price    
-        """     
-        #optional price option from list of products from specific category
-        #return all items at that price within the specific category
-        #if they don't wish to search by price it will go to next method
-         
-         
-    def narrow_categories(self, category) :
-        """ 
-        Purpose is to prompt the user with questions to help narrow down their item options even farther
-        Parameters: 
-            category (str) : the name of the category they are searching in
-        Returns: none
+        Initalize instance of Helper
         Side effects: 
-            prints to console         
+            modifies warehouse, cart, and departments attributes
         """
+
+        self.departments = ["Electronics", "Paper Products", "Dairy", "Bakery", "Furniture"]
+        self.warehouse = store
+        self.cart = {}
+    
+    def categories_search(self):
+        """
+        Allow the user to identify what item they are looking for
+        Raises:
+            Type Error: raised if value isn't in correctly
+        Returns:
+            returns a list of products from each category OR
+            returns specific item detail of that option is selected
+        """
+        #present users with categories and ask them to select one?
+        #similar to how i present categories in find_location
+        
+    def narrow_categories(self, category):
+        """
+        Prompts the user with questions to help narrow down options even further
+        Args: 
+            category(str): category name they are searching in
+        Returns:
+            wouldn't this return an item?*** not sure though - luis
+        """
+        
         # First asks a user if they would like to search for a specific product after they browsed their options returned in the last method
         # If the user answers yes, take them to that item
         # If the user answers no, they will be prompted with different questions based on the category they have chosen
@@ -83,30 +58,31 @@ class Helper:
         # Bakery: What type? Brand?
         # Furniture: What size? Color? Room type?
         
-        if category == "Electronics" :
+        if category == "Electronics":
             brand = input("What brand are you looking for? ")
             if brand == "Apple" :
                 return ["iPhone", "iPad", "Macbook"]
             electronic_type = input("What type of electronic are you looking for? ")
-            if electronic_type == "phone"
+            if electronic_type == "phone":
                 return ["iPhone", "Android", "Blackberry"]
-    
-    def item_attributes(self, item) :
-        """ 
-        Purpose is to return the attributes of the item that the user is searching for.
-        Parameters :
-            item (str) : the name of the item being searched
-        Raises :
-            ValueError: raised if an item does not exist in the store
-        Returns: 
-            (str) item information   
+        
+    def item_attributes(self, item):
         """
-        # pull information such as price, aisle, department and amount in stock related to the searched item from the database
-        # will return this information to the user
+        Show the user the information of the item they chose
+        Args:
+            item(str): name of the item they searched
+        Raises:
+            ValueError: raised if an item doesn't exist in the store
+        Returns:
+            str of item information
+        """
+        
         return self.warehouse[item]
         
-    
-    def suggestions(self, cart):
+        # pull information such as price, aisle, department and amount in stock related to the searched item from the database
+        # will return this information to the user
+        
+    def suggestions(self):
         """
         Purpose is to look at items in the customer's cart and recommend them 
         items to purchase that are frequently bought together
@@ -116,33 +92,18 @@ class Helper:
         Returns:
             (list) List of suggested items to purchase
         """
-        #Looks at the department of items in their cart and recommend items based on what's in their cart.
         
-    def create_store(self):
+    def check_cart(self):
         """
-        Purpose is to create the warehouse along with the items, prices, aisles, departments, and amount in stock
-        Parameters: none
-        Returns: 
-            (dict) warehouse - dict of tuples that contain with key as item name and values (price, aisle, department, #in stock) in tuple
-        Side Effects: none
+        Get a summary of what is currently in a user's cart
+        *** you dont need a cart parameter, u could just use self.cart - luis
         """
-        #example format: {item1:(item, price, aisle, department, # in stock), item2:...}
-        self.warehouse={"item1":("milk",2.99, "aisle1", "department1", 1),"item2":("bread",1.29, "aisle2", "department2", 2)}
         
-    def check_cart(self, cart):
-        """
-        Purpose is to get a summary of what is currently in user's cart
-        Parameters: 
-            (dict) cart - items on cart, along with their corresponding attributes (price, aisle, department, # in stock) 
-        Returns: none
-        Side Effects: 
-            Prints to console
-        """    
-        #example format: Item: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
         for item in self.cart:
-            print f"item: {self.cart[item][0]}, price: {self.cart[item][1]}, aisle: {self.cart[item][2]}, department: {self.cart[item][3]}, stock: {self.cart[item][4]}"
+            print (f"item: {self.cart[item][0]}, price: {self.cart[item][1]}, aisle: ") 
+            print (f"{self.cart[item][2]}, department: {self.cart[item][3]}, stock: {self.cart[item][4]}")
         
-    def cart_total(self, cart):
+    def cart_total(self):
         """
         Purpose is to add up the cost of all items in a customer's cart and show them
         Parameters: (dict) cart - items on cart, along with their corresponding attributes (price, aisle, department, # in stock) 
@@ -150,5 +111,78 @@ class Helper:
             ValueError: if total cost is less than 0
         Returns:
             float of the final total cost"""
-            
-        #Look at the items(and quantity) of a customer's cart to find out the total price
+
+
+def create_store():
+    """Creates the warehouse with items and it's 
+    information in a dictionary
+    Returns: dictionary with warehouse items"""
+    
+    return {1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8), 
+            2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2),
+            3: ('Samsung 60" TV', 799.99, "Aisle 2", "Electronics", 3), 
+            4: ("iPad Pro", 599.99, "Aisle 1", "Electronics", 2),
+            5: ("Apple Watch", 399.99, "Aisle 1", "Electronics", 1),
+            6: ("Samsung S20", 899.99, "Aisle 2", "Electronics", 6),
+            7: ("Blue Napkins", 6.99, "Aisle 4", "Paper Products", 10),
+            8: ("White Paper Towels", 4.99, "Aisle 3", "Paper Products", 4),
+            9: ("Birthday Paper Plates", 3.99, "Aisle 4", "Paper Products", 1),
+            10: ("Red Napkins", 6.99, "Aisle 4", "Paper Products", 10),
+            11: ("Brown Paper Bags", 2.99, "Aisle 3", "Paper Products", 5),
+            12: ("2% Milk", 2.99, "Aisle 5", "Dairy", 18),
+            13: ("Half & Half", 3.99, "Aisle 5", "Dairy", 6),
+            14: ("Mozzarella Cheese", 2.99, "Aisle 5", "Dairy", 8),
+            15: ("Yoplait Yogurt", 1.99, "Aisle 5", "Dairy", 28),
+            16: ("Ben & Jerry's Ice Cream", 6.99, "Aisle 6", "Dairy", 7),
+            17: ("Thomas Bagels", 5.99, "Aisle 7", "Bakery", 10),
+            18: ("Glazed Donuts", 7.99, "Aisle 6", "Bakery", 6),
+            19: ("Birthday Cake", 27.99, "Aisle 6", "Bakery", 1),
+            20: ("French Baguette", 5.99, "Aisle 7", "Bakery", 8),
+            21: ("Sourdough Bread", 4.99, "Aisle 7", "Bakery", 6),
+            22: ("Kitchen Chair", 64.99, "Aisle 8", "Furniture", 4),
+            23: ("Couch", 249.99, "Aisle 8", "Furniture", 2),
+            24: ("Dining Table", 129.99, "Aisle 9", "Furniture", 1),
+            25: ("Living Room Chair", 74.99, "Aisle 8", "Furniture", 8),
+            26: ("School Desk", 119.99, "Aisle 9", "Furniture", 2)}
+    
+
+def find_location(store):
+    """Guides the user to find the item they want
+    Args:
+        store (dict): warehouse items"""
+    
+    departments = ["Electronics", "Paper Products", "Dairy", "Bakery", "Furniture"]
+    num = 0
+    print("\nWhich department would you like to search")
+    for item in departments:
+        num += 1
+        print(f"{num}: {item}")
+    selection = int(input("Insert a number: "))
+    
+    compare = departments[selection - 1]
+    finder = {}
+    for key in store:
+        if compare == store[key][3]:
+            finder[store[key][0]] = store[key][2]
+    print("\n")        
+    for k in finder:
+        print(f"Check {finder[k].lower()} for {k}")
+
+def parse_args(arglist):
+    """ Parse command-line arguments. """
+    parser = ArgumentParser()
+    parser.add_argument("action", type=str,
+                        help="'find' to find an item or 'store' to purchase items")
+    return parser.parse_args(arglist)
+
+
+if __name__ == "__main__":
+    args = parse_args(sys.argv[1:])
+    store = create_store()
+    if args.action == "find":
+        find_location(store)
+    elif args.action == "store":
+        user = Helper(store)
+        user.categories_search
+    else: 
+        raise ValueError("Type either find or store")
