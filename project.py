@@ -99,6 +99,8 @@ class Helper:
         *** you dont need a cart parameter, u could just use self.cart - luis
         """
         
+        #example format: Item#: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
+        
         for item in self.cart:
             print (f"item: {self.cart[item][0]}, price: {self.cart[item][1]}, aisle: ") 
             print (f"{self.cart[item][2]}, department: {self.cart[item][3]}, stock: {self.cart[item][4]}")
@@ -111,12 +113,19 @@ class Helper:
             ValueError: if total cost is less than 0
         Returns:
             float of the final total cost"""
+        
+        total = 0
+        for i in self.cart:
+            total += self.cart[i][1]
+        
+        print(f"Your total is {total}")
 
 
 def create_store():
     """Creates the warehouse with items and it's 
     information in a dictionary
-    Returns: dictionary with warehouse items"""
+    Returns: 
+        dictionary with warehouse items"""
     
     return {1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8), 
             2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2),
