@@ -6,6 +6,7 @@ products and view other features associated with them.
 
 from argparse import ArgumentParser
 import sys
+from collections import Counter
 
 class Helper:
     """
@@ -93,10 +94,31 @@ class Helper:
             (list) List of suggested items to purchase
         """
         
+        count = Counter()
+        for i in self.cart:
+            count[self.cart[i][3]]
+        maxdep = max(count, key=count.get)
+        
+        all_items = [self.warehouse[item][0] for item in self.warehouse
+                     if maxdep == self.warehouse[item][3]]
+        set(all_items)
+        
+        cart_items = [self.cart[c][0] for c in self.cart 
+                      if maxdep == self.cart[c][3]]
+        set(cart_items)
+        
+        suggestions = cart_items.difference(all_items)
+        
+        
+        if len(suggestions) > 0:
+            print("Suggested Items:")
+            for s in suggestions:
+                print(f"\n{s}")
+        
     def check_cart(self):
         """
         Get a summary of what is currently in a user's cart
-        *** you dont need a cart parameter, u could just use self.cart - luis
+        you dont need a cart parameter, u could just use self.cart - luis
         """
         
         #example format: Item#: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
