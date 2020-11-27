@@ -94,26 +94,26 @@ class Helper:
             (list) List of suggested items to purchase
         """
         
-        count = Counter()
+        count = []
         for i in self.cart:
-            count[self.cart[i][3]]
-        maxdep = max(count, key=count.get)
-        
+            count.append(self.cart[i][3])
+        x = Counter(count)
+        maxdep = max(count, key=x.get)
+
         all_items = [self.warehouse[item][0] for item in self.warehouse
-                     if maxdep == self.warehouse[item][3]]
-        set(all_items)
-        
+                        if maxdep == self.warehouse[item][3]]
+        all_items = set(all_items)
+
         cart_items = [self.cart[c][0] for c in self.cart 
-                      if maxdep == self.cart[c][3]]
-        set(cart_items)
-        
-        suggestions = cart_items.difference(all_items)
-        
-        
+                        if maxdep == self.cart[c][3]]
+        cart_items = set(cart_items)
+
+        suggestions = all_items.difference(cart_items)
+
         if len(suggestions) > 0:
-            print("Suggested Items:")
+            print("SUGGESTED ITEMS:\n")
             for s in suggestions:
-                print(f"\n{s}")
+                print(f"{s}")
         
     def check_cart(self):
         """
