@@ -29,7 +29,7 @@ class Helper:
         self.warehouse = store
         self.cart = {}
     
-    def categories_search(self):
+    def categories_search(self, store):
         """
         Allow the user to identify what item they are looking for
         Raises:
@@ -38,8 +38,29 @@ class Helper:
             returns a list of products from each category OR
             returns specific item detail of that option is selected
         """
-        #present users with categories and ask them to select one?
-        #similar to how i present categories in find_location
+        
+        specific_search = input("Do you want to search for a specific item? (yes/no)").strip().lower()
+        if specific_search == "yes":
+            product = input("What product do you wish to search for?")
+            for key in store:
+                if product == [store[key][0]]:
+                    print(f"{product}: cost={[store[key][1]]}, aisle={[store[key][2]]}, department={[store[key][3]]}")
+        
+        if specific_search == "no":
+            num = 0
+            print("\nWhich department would you like to search")
+            for item in self.departments:
+                num += 1
+                print(f"{num}: {item}")
+            selection = int(input("Insert a number: "))
+            compare = self.departments[selection - 1]
+            for key in store:
+                if compare == [store[key][3]]:
+                    nl = '\n'
+                    print(f"item:{nl}{[store[key][0]]}") 
+        
+            
+
         
     def narrow_categories(self, category):
         """
