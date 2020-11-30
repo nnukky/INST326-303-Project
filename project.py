@@ -281,7 +281,6 @@ def create_store():
     Purpose is to create the warehouse with items and their information in a dictionary
     Parameters: none
     Returns:  dictionary with warehouse items
-    Side effects: changes warehouse
     """    
     return {1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8), 
             2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2),
