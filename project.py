@@ -29,7 +29,7 @@ class Helper:
         self.warehouse = store
         self.cart = {}    
         
-    def categories_search(self, store):
+    def categories_search(self):
         """
         Allow the user to identify what item they are looking for
         Raises:
@@ -49,23 +49,36 @@ class Helper:
                 print(f"{num}: {item}")
             selection = int(input("Insert a number: "))
             compare = self.departments[selection - 1]
-            for key in store:
-                if compare == store[key][3]:
+            for key in self.warehouse:
+                if compare == self.warehouse[key][3]:
                     nl = '\n'
-                    print(f"item:{nl}{[store[key][0]]}") 
-                    
-    def price_search(self, price):
-        """The purpose of this funtion is to allow a customer to search by price of items
-        
+                    print(f"item:{nl}{[self.warehouse[key][0]]}") 
+            self.price_search()        
+    
+    def price_search(self):
+        """Allows customer to search by price of items
         Parameters:
             self.price(dict): Dictionary mapped to price of goods
-        
         Raises:
             ValueError: Value error is price is entered correctly
-        
         Returns:
             #items at specific price    
         """     
+        price_range_list = [ "<$5" , "$5-$29", "$30-$99", "$100-$800", ">$800"]
+        price = input("Do you wish to narrow down your results by searching by price? (yes/no)").strip().lower()
+        num = 0
+        if price == "yes":
+            num += 1
+            print(f"{num}: {price_range_list}")
+        price_range = int(input("Insert a number: "))
+        check = price_range_list[price_range - 1]
+        for item_price in self.warehouse:
+            if check == self.warehouse[item_price][2]:
+                nl = '\n'
+                print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+        if price == "no":
+            continue   
+        
         #optional price option from list of products from specific category
         #return all items at that price within the specific category
         #if they don't wish to search by price it will go to next method
