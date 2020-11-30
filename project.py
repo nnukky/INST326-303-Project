@@ -27,42 +27,7 @@ class Helper:
 
         self.departments = ["Electronics", "Paper Products", "Dairy", "Bakery", "Furniture"]
         self.warehouse = store
-        self.cart = {}
-    
-    def create_store(self):
-    """
-    Purpose is to create the warehouse with items and their information in a dictionary
-    Parameters: none
-    Returns:  dictionary with warehouse items
-    Side effects: changes warehouse
-    """    
-    self.warehouse= {1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8), 
-            2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2),
-            3: ('Samsung 60" TV', 799.99, "Aisle 2", "Electronics", 3), 
-            4: ("iPad Pro", 599.99, "Aisle 1", "Electronics", 2),
-            5: ("Apple Watch", 399.99, "Aisle 1", "Electronics", 1),
-            6: ("Samsung S20", 899.99, "Aisle 2", "Electronics", 6),
-            7: ("Blue Napkins", 6.99, "Aisle 4", "Paper Products", 10),
-            8: ("White Paper Towels", 4.99, "Aisle 3", "Paper Products", 4),
-            9: ("Birthday Paper Plates", 3.99, "Aisle 4", "Paper Products", 1),
-            10: ("Red Napkins", 6.99, "Aisle 4", "Paper Products", 10),
-            11: ("Brown Paper Bags", 2.99, "Aisle 3", "Paper Products", 5),
-            12: ("2% Milk", 2.99, "Aisle 5", "Dairy", 18),
-            13: ("Half & Half", 3.99, "Aisle 5", "Dairy", 6),
-            14: ("Mozzarella Cheese", 2.99, "Aisle 5", "Dairy", 8),
-            15: ("Yoplait Yogurt", 1.99, "Aisle 5", "Dairy", 28),
-            16: ("Ben & Jerry's Ice Cream", 6.99, "Aisle 6", "Dairy", 7),
-            17: ("Thomas Bagels", 5.99, "Aisle 7", "Bakery", 10),
-            18: ("Glazed Donuts", 7.99, "Aisle 6", "Bakery", 6),
-            19: ("Birthday Cake", 27.99, "Aisle 6", "Bakery", 1),
-            20: ("French Baguette", 5.99, "Aisle 7", "Bakery", 8),
-            21: ("Sourdough Bread", 4.99, "Aisle 7", "Bakery", 6),
-            22: ("Kitchen Chair", 64.99, "Aisle 8", "Furniture", 4),
-            23: ("Couch", 249.99, "Aisle 8", "Furniture", 2),
-            24: ("Dining Table", 129.99, "Aisle 9", "Furniture", 1),
-            25: ("Living Room Chair", 74.99, "Aisle 8", "Furniture", 8),
-            26: ("School Desk", 119.99, "Aisle 9", "Furniture", 2)}
-    return self.warehouse
+        self.cart = {}    
         
     def categories_search(self, store):
         """
@@ -298,6 +263,40 @@ class Helper:
             total += self.cart[i][1]
         
         print(f"Your total is {total}")
+        
+def create_store():
+    """
+    Purpose is to create the warehouse with items and their information in a dictionary
+    Parameters: none
+    Returns:  dictionary with warehouse items
+    Side effects: changes warehouse
+    """    
+    return {1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8), 
+            2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2),
+            3: ('Samsung 60" TV', 799.99, "Aisle 2", "Electronics", 3), 
+            4: ("iPad Pro", 599.99, "Aisle 1", "Electronics", 2),
+            5: ("Apple Watch", 399.99, "Aisle 1", "Electronics", 1),
+            6: ("Samsung S20", 899.99, "Aisle 2", "Electronics", 6),
+            7: ("Blue Napkins", 6.99, "Aisle 4", "Paper Products", 10),
+            8: ("White Paper Towels", 4.99, "Aisle 3", "Paper Products", 4),
+            9: ("Birthday Paper Plates", 3.99, "Aisle 4", "Paper Products", 1),
+            10: ("Red Napkins", 6.99, "Aisle 4", "Paper Products", 10),
+            11: ("Brown Paper Bags", 2.99, "Aisle 3", "Paper Products", 5),
+            12: ("2% Milk", 2.99, "Aisle 5", "Dairy", 18),
+            13: ("Half & Half", 3.99, "Aisle 5", "Dairy", 6),
+            14: ("Mozzarella Cheese", 2.99, "Aisle 5", "Dairy", 8),
+            15: ("Yoplait Yogurt", 1.99, "Aisle 5", "Dairy", 28),
+            16: ("Ben & Jerry's Ice Cream", 6.99, "Aisle 6", "Dairy", 7),
+            17: ("Thomas Bagels", 5.99, "Aisle 7", "Bakery", 10),
+            18: ("Glazed Donuts", 7.99, "Aisle 6", "Bakery", 6),
+            19: ("Birthday Cake", 27.99, "Aisle 6", "Bakery", 1),
+            20: ("French Baguette", 5.99, "Aisle 7", "Bakery", 8),
+            21: ("Sourdough Bread", 4.99, "Aisle 7", "Bakery", 6),
+            22: ("Kitchen Chair", 64.99, "Aisle 8", "Furniture", 4),
+            23: ("Couch", 249.99, "Aisle 8", "Furniture", 2),
+            24: ("Dining Table", 129.99, "Aisle 9", "Furniture", 1),
+            25: ("Living Room Chair", 74.99, "Aisle 8", "Furniture", 8),
+            26: ("School Desk", 119.99, "Aisle 9", "Furniture", 2)}         
 
 def find_location(store):
     """Guides the user to find the item they want
