@@ -335,6 +335,6 @@ if __name__ == "__main__":
         find_location(store)
     elif args.action == "store":
         user = Helper(store)
-        user.categories_search
+        user.categories_search()
     else: 
         raise ValueError("Type either find or store")
