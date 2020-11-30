@@ -62,32 +62,140 @@ class Helper:
             
 
         
-    def narrow_categories(self, category):
+    def narrow_categories(self, selection):
         """
         Prompts the user with questions to help narrow down options even further
         Args: 
-            category(str): category name they are searching in
+            selection(int)): category number they are searching in
         Returns:
-            wouldn't this return an item?*** not sure though - luis
+            (list): list of possible items to browse determined by their answer to the questions
         """
         
-        # First asks a user if they would like to search for a specific product after they browsed their options returned in the last method
-        # If the user answers yes, take them to that item
-        # If the user answers no, they will be prompted with different questions based on the category they have chosen
-        # Electronics: What brand? What type?
-        # Paper Products: Color? What type? Special Event?
-        # Dairy: What type? Brand?
-        # Bakery: What type? Brand?
-        # Furniture: What size? Color? Room type?
-        
-        if category == "Electronics":
+        while selection == 1 :
             brand = input("What brand are you looking for? ")
             if brand == "Apple" :
-                return ["iPhone", "iPad", "Macbook"]
+                return ["iPhone 12", "iPad", "Macbook Pro", "Apple Watch"]
+            if brand == "Android" :
+                return ["Android"]
+            if brand == "Samsung" :
+                return ["Samsung TV"]
+            else :
+                print("We do not have this brand in our inventory.")
+                
             electronic_type = input("What type of electronic are you looking for? ")
             if electronic_type == "phone":
-                return ["iPhone", "Android", "Blackberry"]
-        
+                return ["iPhone", "Android"]
+            if electronic_type == "TV": 
+                return ["Samsung TV"]
+            if electronic_type == "Tablet" :
+                return ["iPad"]
+            if electronic_type == "Watch" :
+                return ["Apple Watch"]
+            else :
+                print("We do not have this electronic type in our inventory.")
+                
+        while selection == 2 :
+            color = input("What color of paper product are you looking for?")
+            if color == "Blue" :
+                return ["Blue Napkins"]
+            if color == "White" :
+                return ["White Paper Towels"]
+            if color == "Brown" :
+                return ["Brown Paper Bags"]
+            if color == "Red" :
+                return ["Red Napkins"]
+            if color == "Multicolor" :
+                return ["Birthday Paper Plates"]
+            else :
+                print("We do not have this color in our inventory.")
+                
+            paper_product_type = input("What type of paper product are you looking for?")
+            if paper_product_type == "Napkins" :
+                return ["Blue Napkins", "Red Napkins"]
+            if paper_product_type == "Paper Towels":
+                return ["White Paper Towels"]
+            if paper_product_type == "Paper Bags" :
+                return ["Brown Paper Bags"]
+            if paper_product_type == "Plates" :
+                return ["Birthday Paper Plates"]
+            else :
+                print("We do not have this paper product type in our inventory.")
+                
+            occasion = input("What type of occasion are you shopping for?")
+            if occasion == "Birthday" :
+                return ["Birthday Paper Plates"]
+            else :
+                print("We do not have this occasion in our inventory.")
+                
+        while selection == 3 :
+            dairy_type = input("What type of dairy are you looking for?")
+            if dairy_type == "Milk" :
+                return ["2% Milk", "Half and Half"]
+            if dairy_type == "Cheese" :
+                return ["Mozzarella Cheese"]
+            if dairy_type == "Yogurt" :
+                return ["Yoplait Yogurt"]
+            if dairy_type == "Ice Cream" :
+                return ["Ben and Jerry's Ice Cream"]
+            else :
+                print("We do not have this dairy type in our inventory.")
+                
+            dairy_brand = input("What brand of dairy are you looking for?")
+            if dairy_brand == "Yoplait" :
+                return ["Yoplait Yogurt"]
+            if dairy_brand == "Ben and Jerry's" :
+                return ["Ben and Jerry's Ice Cream"]
+            else :
+                print("We do not have this brand in our inventory.")
+                
+        while selection == 4 :
+            bakery_type = input("What type of baked good are you looking for?")
+            if bakery_type = "Bagels" :
+                return ["Thomas Bagels"]
+            if bakery_type = "Donuts" :
+                return ["Glazed Donuts"]
+            if bakery_type = "Cake" :
+                return ["Birthday Cake"]
+            if bakery_type = "Bread" :
+                return ["French Baguette", "Sourdough Bread"]
+            else :
+                print("We do not have this type of baked good in our inventory.")
+            
+            bakery_brand = input("What brand of baked good are you looking for?")
+            if bakery_brand = "Thomas" :
+                return ["Thomas Bagels"]
+            else :
+                print("We do not have this brand in our inventory.")
+            
+            bakery_occasion = input("What occasion are you shopping for?")
+            if bakery_occasion = "Birthday" :
+                return ["Birthday Cake"]
+            if furniture_type == "Chair" :
+                return ["Kitchen Chair", "Living Room Chair"]
+            else :
+                print("We do not have this occasion in our inventory.")
+                
+        while selection == 5 :
+            furniture_type = input("What furniture type are you looking for?")
+            if furniture_type == "Chair" :
+                return ["Kitchen Chair", "Living Room Chair"]
+            if furniture_type == "Couch" :
+                return ["Couch"]
+            if furniture_type == "Table" :
+                return ["Dining Table", "School Desk"]
+            else :
+                print("We do not have this furniture type in our inventory.")
+            
+            room = input("What room are you shopping for furniture for?")
+            if room = "Kitchen" :
+                return ["Kitchen Chair"]
+            if room = "Dining Room" :
+                return ["Dining Table"]
+            if room = "Living Room" :
+                return ["Living Room Chair"]
+            else :
+                print("We do not have this room in our inventory.")
+                                    
     def item_attributes(self, item):
         """
         Show the user the information of the item they chose
@@ -98,11 +206,11 @@ class Helper:
         Returns:
             str of item information
         """
-        
-        return self.warehouse[item]
-        
-        # pull information such as price, aisle, department and amount in stock related to the searched item from the database
-        # will return this information to the user
+        item = input("What item are you searching for?")
+        for key in self.warehouse :
+            if item == self.warehouse[key][0] :
+                print(f"{item} is ${self.warehouse[key][1]} and you can find it in {self.warehouse[key][2]} in the 
+                      {self.warehouse[key][3]} Department. We currently have {self.warehouse[key][4]} in stock.")
         
     def suggestions(self):
         """
