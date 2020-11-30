@@ -53,6 +53,22 @@ class Helper:
                 if compare == store[key][3]:
                     nl = '\n'
                     print(f"item:{nl}{[store[key][0]]}") 
+                    
+    def price_search(self, price):
+        """The purpose of this funtion is to allow a customer to search by price of items
+        
+        Parameters:
+            self.price(dict): Dictionary mapped to price of goods
+        
+        Raises:
+            ValueError: Value error is price is entered correctly
+        
+        Returns:
+            #items at specific price    
+        """     
+        #optional price option from list of products from specific category
+        #return all items at that price within the specific category
+        #if they don't wish to search by price it will go to next method
                       
     def narrow_categories(self, selection):
         """
