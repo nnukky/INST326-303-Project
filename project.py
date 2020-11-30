@@ -246,15 +246,16 @@ class Helper:
         
     def check_cart(self):
         """
-        Get a summary of what is currently in a user's cart
-        you dont need a cart parameter, u could just use self.cart - luis
-        """
-        
+        Purpose is to get a summary of what is currently in a user's cart and display to user
+        Parameters: none
+        Returns: none
+        Side effects: prints to console        
+        """        
         #example format: Item#: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
         
         for item in self.cart:
-            print (f"item: {self.cart[item][0]}, price: {self.cart[item][1]}, aisle: ") 
-            print (f"{self.cart[item][2]}, department: {self.cart[item][3]}, stock: {self.cart[item][4]}")
+            print (f"item: {self.cart[item][0]}, price: {self.cart[item][1]}") 
+            print (f"aisle: {self.cart[item][2]}, department: {self.cart[item][3]}, stock: {self.cart[item][4]}")
         
     def cart_total(self):
         """
@@ -272,13 +273,15 @@ class Helper:
         print(f"Your total is {total}")
 
 
-def create_store():
-    """Creates the warehouse with items and it's 
-    information in a dictionary
-    Returns: 
-        dictionary with warehouse items"""
+def create_store(self):
+    """
+    Purpose is to create the warehouse with items and their information in a dictionary
+    Parameters: none
+    Returns:  dictionary with warehouse items
+    Side effects: changes warehouse
+    """
     
-    return {1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8), 
+    self.warehouse= {1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8), 
             2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2),
             3: ('Samsung 60" TV', 799.99, "Aisle 2", "Electronics", 3), 
             4: ("iPad Pro", 599.99, "Aisle 1", "Electronics", 2),
@@ -304,6 +307,7 @@ def create_store():
             24: ("Dining Table", 129.99, "Aisle 9", "Furniture", 1),
             25: ("Living Room Chair", 74.99, "Aisle 8", "Furniture", 8),
             26: ("School Desk", 119.99, "Aisle 9", "Furniture", 2)}
+    return self.warehouse
     
 
 def find_location(store):
