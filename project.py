@@ -40,11 +40,7 @@ class Helper:
         """        
         specific_search = input("Do you want to search for a specific item? (yes/no)").strip().lower()
         if specific_search == "yes":
-            product = input("What product do you wish to search for?")
-            for key in store:
-                if product == [store[key][0]]:
-                    print(f"{product}: cost={[store[key][1]]}, aisle={[store[key][2]]}, department={[store[key][3]]}")
-        
+            self.item_attributes()
         if specific_search == "no":
             num = 0
             print("\nWhich department would you like to search")
@@ -190,7 +186,7 @@ class Helper:
             else :
                 print("We do not have this room in our inventory.")
                                     
-    def item_attributes(self, item):
+    def item_attributes(self):
         """
         Show the user the information of the item they chose
         Args:
