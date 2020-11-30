@@ -50,7 +50,7 @@ class Helper:
             selection = int(input("Insert a number: "))
             compare = self.departments[selection - 1]
             for key in store:
-                if compare == [store[key][3]]:
+                if compare == store[key][3]:
                     nl = '\n'
                     print(f"item:{nl}{[store[key][0]]}") 
                       
@@ -331,6 +331,6 @@ if __name__ == "__main__":
         find_location(store)
     elif args.action == "store":
         user = Helper(store)
-        user.categories_search()
+        user.categories_search(store)
     else: 
         raise ValueError("Type either find or store")
