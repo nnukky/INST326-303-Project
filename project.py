@@ -150,28 +150,26 @@ class Helper:
                 
         while selection == 4 :
             bakery_type = input("What type of baked good are you looking for?")
-            if bakery_type = "Bagels" :
+            if bakery_type == "Bagels" :
                 return ["Thomas Bagels"]
-            if bakery_type = "Donuts" :
+            if bakery_type == "Donuts" :
                 return ["Glazed Donuts"]
-            if bakery_type = "Cake" :
+            if bakery_type == "Cake" :
                 return ["Birthday Cake"]
-            if bakery_type = "Bread" :
+            if bakery_type == "Bread" :
                 return ["French Baguette", "Sourdough Bread"]
             else :
                 print("We do not have this type of baked good in our inventory.")
             
             bakery_brand = input("What brand of baked good are you looking for?")
-            if bakery_brand = "Thomas" :
+            if bakery_brand == "Thomas" :
                 return ["Thomas Bagels"]
             else :
                 print("We do not have this brand in our inventory.")
             
             bakery_occasion = input("What occasion are you shopping for?")
-            if bakery_occasion = "Birthday" :
+            if bakery_occasion == "Birthday" :
                 return ["Birthday Cake"]
-            if furniture_type == "Chair" :
-                return ["Kitchen Chair", "Living Room Chair"]
             else :
                 print("We do not have this occasion in our inventory.")
                 
@@ -187,11 +185,11 @@ class Helper:
                 print("We do not have this furniture type in our inventory.")
             
             room = input("What room are you shopping for furniture for?")
-            if room = "Kitchen" :
+            if room == "Kitchen" :
                 return ["Kitchen Chair"]
-            if room = "Dining Room" :
+            if room == "Dining Room" :
                 return ["Dining Table"]
-            if room = "Living Room" :
+            if room == "Living Room" :
                 return ["Living Room Chair"]
             else :
                 print("We do not have this room in our inventory.")
@@ -209,8 +207,7 @@ class Helper:
         item = input("What item are you searching for?")
         for key in self.warehouse :
             if item == self.warehouse[key][0] :
-                print(f"{item} is ${self.warehouse[key][1]} and you can find it in {self.warehouse[key][2]} in the 
-                      {self.warehouse[key][3]} Department. We currently have {self.warehouse[key][4]} in stock.")
+                print(f"{item} is ${self.warehouse[key][1]} and you can find it in {self.warehouse[key][2]} in the {self.warehouse[key][3]} Department. We currently have {self.warehouse[key][4]} in stock.")
         
     def suggestions(self):
         """
