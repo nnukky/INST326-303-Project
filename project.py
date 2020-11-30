@@ -52,7 +52,7 @@ class Helper:
             for key in store:
                 if compare == store[key][3]:
                     nl = '\n'
-                    print(f"item:{nl}{[store[key][0]]}") 
+                    print(f"item:{nl}{store[key][0]}") 
                     
     def price_search(self, price):
         """The purpose of this funtion is to allow a customer to search by price of items
