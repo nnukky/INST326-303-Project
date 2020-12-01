@@ -303,11 +303,24 @@ class Helper:
         
         print(f"Your total is {total}")
         
+    def add_to_cart(self, itemNum):
+        """
+        Purpose is to add item to cart
+        Parameters: (int) itemNum - number for identifying item
+        Returns: none
+        Side effects: changes self.cart
+        """
+        self.cart[len(self.cart)+1]=store[itemNum] 
+        
+        
+    
+        
 def create_store():
     """
     Purpose is to create the warehouse with items and their information in a dictionary
     Parameters: none
     Returns:  dictionary with warehouse items
+    Side effects: none
     """    
     return {1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8), 
             2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2),
