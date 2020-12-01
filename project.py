@@ -52,7 +52,7 @@ class Helper:
             for key in self.warehouse:
                 if compare == self.warehouse[key][3]:
                     nl = '\n'
-                    print(f"ITEM:{nl}{self.warehouse[key][0]}") 
+                    print(f"ITEM:{self.warehouse[key][0]}{nl}") 
             self.price_search(selection)        
     
     def price_search(self, selection):
@@ -73,28 +73,29 @@ class Helper:
                 print(f"{num}: {number}")
             price_range = int(input("Insert a number: "))
             check = price_range_list[price_range - 1]
+            for item_price in self.warehouse:
+                if check == 1 and self.warehouse[item_price][2] < 5:
+                    nl = '\n'
+                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+            
+                elif check == 2 and 5 <= [self.warehouse[item_price][2]] <=29.99:
+                    nl = '\n'
+                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+            
+                elif check == 3 and 30 <= [self.warehouse[item_price][2]] <=99.99:
+                    nl = '\n'
+                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+ 
+                elif check == 4 and 100 <= [self.warehouse[item_price][2]] <=800:
+                    nl = '\n'
+                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+                
+                elif check == 5 and [self.warehouse[item_price][2]] > 800:
+                    nl = '\n'
+                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
         if price == "no":
             self.narrow_categories(selection)
-        for item_price in self.warehouse:
-            if check == 1 and self.warehouse[item_price][2] < 5:
-                nl = '\n'
-                print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
-            
-            if check == 2 and 5 <= [self.warehouse[item_price][2]] <=29.99:
-                nl = '\n'
-                print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
-            
-            if check == 3 and 30 <= [self.warehouse[item_price][2]] <=99.99:
-                nl = '\n'
-                print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
- 
-            if check == 4 and 100 <= [self.warehouse[item_price][2]] <=800:
-                nl = '\n'
-                print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
-                
-            if check == 5 and [self.warehouse[item_price][2]] > 800:
-                nl = '\n'
-                print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+        
                     
                       
     def narrow_categories(self, selection):
