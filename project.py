@@ -74,7 +74,7 @@ class Helper:
             price_range = int(input("Insert a number: "))
             check = price_range_list[price_range - 1]
         if price == "no":
-            break
+            self.narrow_categories(check)
         for item_price in self.warehouse:
             if check == 1 and self.warehouse[item_price][2] < 5:
                 nl = '\n'
