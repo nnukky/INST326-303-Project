@@ -114,9 +114,9 @@ class Helper:
                 brand = input("What brand are you looking for? ")
                 if brand == "Apple" :
                     print(["iPhone 12", "iPad", "Macbook Pro", "Apple Watch"])
-                if brand == "Android" :
+                elif brand == "Android" :
                     print(["Android"])
-                if brand == "Samsung" :
+                elif brand == "Samsung" :
                     print(["Samsung TV"])
                 else :
                     print("We do not have this brand in our inventory.")
@@ -124,11 +124,11 @@ class Helper:
                 electronic_type = input("What type of electronic are you looking for? ")
                 if electronic_type == "phone":
                     print(["iPhone", "Android"])
-                if electronic_type == "TV": 
+                elif electronic_type == "TV": 
                     print(["Samsung TV"])
-                if electronic_type == "Tablet" :
+                elif electronic_type == "Tablet" :
                     print(["iPad"])
-                if electronic_type == "Watch" :
+                elif electronic_type == "Watch" :
                     print(["Apple Watch"])
                 else :
                     print("We do not have this electronic type in our inventory.")
@@ -137,13 +137,13 @@ class Helper:
                 color = input("What color of paper product are you looking for?")
                 if color == "Blue" :
                     print(["Blue Napkins"])
-                if color == "White" :
+                elif color == "White" :
                     print(["White Paper Towels"])
-                if color == "Brown" :
+                elif color == "Brown" :
                     print(["Brown Paper Bags"])
-                if color == "Red" :
+                elif color == "Red" :
                     print(["Red Napkins"])
-                if color == "Multicolor" :
+                elif color == "Multicolor" :
                     print(["Birthday Paper Plates"])
                 else :
                     print("We do not have this color in our inventory.")
@@ -151,11 +151,11 @@ class Helper:
                 paper_product_type = input("What type of paper product are you looking for?")
                 if paper_product_type == "Napkins" :
                     print(["Blue Napkins", "Red Napkins"])
-                if paper_product_type == "Paper Towels":
+                elif paper_product_type == "Paper Towels":
                     print(["White Paper Towels"])
-                if paper_product_type == "Paper Bags" :
+                elif paper_product_type == "Paper Bags" :
                     print(["Brown Paper Bags"])
-                if paper_product_type == "Plates" :
+                elif paper_product_type == "Plates" :
                     print(["Birthday Paper Plates"])
                 else :
                     print("We do not have this paper product type in our inventory.")
@@ -170,11 +170,11 @@ class Helper:
                 dairy_type = input("What type of dairy are you looking for?")
                 if dairy_type == "Milk" :
                     print(["2% Milk", "Half and Half"])
-                if dairy_type == "Cheese" :
+                elif dairy_type == "Cheese" :
                     print(["Mozzarella Cheese"])
-                if dairy_type == "Yogurt" :
+                elif dairy_type == "Yogurt" :
                     print(["Yoplait Yogurt"])
-                if dairy_type == "Ice Cream" :
+                elif dairy_type == "Ice Cream" :
                     print(["Ben and Jerry's Ice Cream"])
                 else :
                     print("We do not have this dairy type in our inventory.")
@@ -182,7 +182,7 @@ class Helper:
                 dairy_brand = input("What brand of dairy are you looking for?")
                 if dairy_brand == "Yoplait" :
                     print(["Yoplait Yogurt"])
-                if dairy_brand == "Ben and Jerry's" :
+                elif dairy_brand == "Ben and Jerry's" :
                     print(["Ben and Jerry's Ice Cream"])
                 else :
                     print("We do not have this brand in our inventory.")
@@ -191,11 +191,11 @@ class Helper:
                 bakery_type = input("What type of baked good are you looking for?")
                 if bakery_type == "Bagels" :
                     print(["Thomas Bagels"])
-                if bakery_type == "Donuts" :
+                elif bakery_type == "Donuts" :
                     print(["Glazed Donuts"])
-                if bakery_type == "Cake" :
+                elif bakery_type == "Cake" :
                     print(["Birthday Cake"])
-                if bakery_type == "Bread" :
+                elif bakery_type == "Bread" :
                     print(["French Baguette", "Sourdough Bread"])
                 else :
                     print("We do not have this type of baked good in our inventory.")
@@ -216,9 +216,9 @@ class Helper:
                 furniture_type = input("What furniture type are you looking for?")
                 if furniture_type == "Chair" :
                     print(["Kitchen Chair", "Living Room Chair"])
-                if furniture_type == "Couch" :
+                elif furniture_type == "Couch" :
                     print(["Couch"])
-                if furniture_type == "Table" :
+                elif furniture_type == "Table" :
                     print(["Dining Table", "School Desk"])
                 else :
                     print("We do not have this furniture type in our inventory.")
@@ -226,9 +226,9 @@ class Helper:
                 room = input("What room are you shopping for furniture for?")
                 if room == "Kitchen" :
                     print(["Kitchen Chair"])
-                if room == "Dining Room" :
+                elif room == "Dining Room" :
                     print(["Dining Table"])
-                if room == "Living Room" :
+                elif room == "Living Room" :
                     print(["Living Room Chair"])
                 else :
                     print("We do not have this room in our inventory.")
