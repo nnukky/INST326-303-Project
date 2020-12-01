@@ -111,126 +111,126 @@ class Helper:
         if narrow == "no" :
             self.item_attributes()
         if narrow == "yes" :
-            while selection == 1 :
+            if selection == 1 :
                 brand = input("What brand are you looking for? ")
                 if brand == "Apple" :
-                    return ["iPhone 12", "iPad", "Macbook Pro", "Apple Watch"]
-                if brand == "Android" :
-                    return ["Android"]
-                if brand == "Samsung" :
-                    return ["Samsung TV"]
+                    print(["iPhone 12", "iPad", "Macbook Pro", "Apple Watch"])
+                elif brand == "Android" :
+                    print(["Android"])
+                elif brand == "Samsung" :
+                    print(["Samsung TV"])
                 else :
                     print("We do not have this brand in our inventory.")
                 
                 electronic_type = input("What type of electronic are you looking for? ")
                 if electronic_type == "phone":
-                    return ["iPhone", "Android"]
-                if electronic_type == "TV": 
-                    return ["Samsung TV"]
-                if electronic_type == "Tablet" :
-                    return ["iPad"]
-                if electronic_type == "Watch" :
-                    return ["Apple Watch"]
+                    print(["iPhone", "Android"])
+                elif electronic_type == "TV": 
+                    print(["Samsung TV"])
+                elif electronic_type == "Tablet" :
+                    print(["iPad"])
+                elif electronic_type == "Watch" :
+                    print(["Apple Watch"])
                 else :
                     print("We do not have this electronic type in our inventory.")
                 
-            while selection == 2 :
+            if selection == 2 :
                 color = input("What color of paper product are you looking for?")
                 if color == "Blue" :
-                    return ["Blue Napkins"]
-                if color == "White" :
-                    return ["White Paper Towels"]
-                if color == "Brown" :
-                    return ["Brown Paper Bags"]
-                if color == "Red" :
-                    return ["Red Napkins"]
-                if color == "Multicolor" :
-                    return ["Birthday Paper Plates"]
+                    print(["Blue Napkins"])
+                elif color == "White" :
+                    print(["White Paper Towels"])
+                elif color == "Brown" :
+                    print(["Brown Paper Bags"])
+                elif color == "Red" :
+                    print(["Red Napkins"])
+                elif color == "Multicolor" :
+                    print(["Birthday Paper Plates"])
                 else :
                     print("We do not have this color in our inventory.")
                 
                 paper_product_type = input("What type of paper product are you looking for?")
                 if paper_product_type == "Napkins" :
-                    return ["Blue Napkins", "Red Napkins"]
-                if paper_product_type == "Paper Towels":
-                    return ["White Paper Towels"]
-                if paper_product_type == "Paper Bags" :
-                    return ["Brown Paper Bags"]
-                if paper_product_type == "Plates" :
-                    return ["Birthday Paper Plates"]
+                    print(["Blue Napkins", "Red Napkins"])
+                elif paper_product_type == "Paper Towels":
+                    print(["White Paper Towels"])
+                elif paper_product_type == "Paper Bags" :
+                    print(["Brown Paper Bags"])
+                elif paper_product_type == "Plates" :
+                    print(["Birthday Paper Plates"])
                 else :
                     print("We do not have this paper product type in our inventory.")
                 
                 occasion = input("What type of occasion are you shopping for?")
                 if occasion == "Birthday" :
-                    return ["Birthday Paper Plates"]
+                    print(["Birthday Paper Plates"])
                 else :
                     print("We do not have this occasion in our inventory.")
                 
-            while selection == 3 :
+            if selection == 3 :
                 dairy_type = input("What type of dairy are you looking for?")
                 if dairy_type == "Milk" :
-                    return ["2% Milk", "Half and Half"]
-                if dairy_type == "Cheese" :
-                    return ["Mozzarella Cheese"]
-                if dairy_type == "Yogurt" :
-                    return ["Yoplait Yogurt"]
-                if dairy_type == "Ice Cream" :
-                    return ["Ben and Jerry's Ice Cream"]
+                    print(["2% Milk", "Half and Half"])
+                elif dairy_type == "Cheese" :
+                    print(["Mozzarella Cheese"])
+                elif dairy_type == "Yogurt" :
+                    print(["Yoplait Yogurt"])
+                elif dairy_type == "Ice Cream" :
+                    print(["Ben and Jerry's Ice Cream"])
                 else :
                     print("We do not have this dairy type in our inventory.")
                 
                 dairy_brand = input("What brand of dairy are you looking for?")
                 if dairy_brand == "Yoplait" :
-                    return ["Yoplait Yogurt"]
-                if dairy_brand == "Ben and Jerry's" :
-                    return ["Ben and Jerry's Ice Cream"]
+                    print(["Yoplait Yogurt"])
+                elif dairy_brand == "Ben and Jerry's" :
+                    print(["Ben and Jerry's Ice Cream"])
                 else :
                     print("We do not have this brand in our inventory.")
                 
-            while selection == 4 :
+            if selection == 4 :
                 bakery_type = input("What type of baked good are you looking for?")
                 if bakery_type == "Bagels" :
-                    return ["Thomas Bagels"]
-                if bakery_type == "Donuts" :
-                    return ["Glazed Donuts"]
-                if bakery_type == "Cake" :
-                    return ["Birthday Cake"]
-                if bakery_type == "Bread" :
-                    return ["French Baguette", "Sourdough Bread"]
+                    print(["Thomas Bagels"])
+                elif bakery_type == "Donuts" :
+                    print(["Glazed Donuts"])
+                elif bakery_type == "Cake" :
+                    print(["Birthday Cake"])
+                elif bakery_type == "Bread" :
+                    print(["French Baguette", "Sourdough Bread"])
                 else :
                     print("We do not have this type of baked good in our inventory.")
             
                 bakery_brand = input("What brand of baked good are you looking for?")
                 if bakery_brand == "Thomas" :
-                    return ["Thomas Bagels"]
+                    print(["Thomas Bagels"])
                 else :
                     print("We do not have this brand in our inventory.")
             
                 bakery_occasion = input("What occasion are you shopping for?")
                 if bakery_occasion == "Birthday" :
-                    return ["Birthday Cake"]
+                    print(["Birthday Cake"])
                 else :
                     print("We do not have this occasion in our inventory.")
                 
-            while selection == 5 :
+            if selection == 5 :
                 furniture_type = input("What furniture type are you looking for?")
                 if furniture_type == "Chair" :
-                    return ["Kitchen Chair", "Living Room Chair"]
-                if furniture_type == "Couch" :
-                    return ["Couch"]
-                if furniture_type == "Table" :
-                    return ["Dining Table", "School Desk"]
+                    print(["Kitchen Chair", "Living Room Chair"])
+                elif furniture_type == "Couch" :
+                    print(["Couch"])
+                elif furniture_type == "Table" :
+                    print(["Dining Table", "School Desk"])
                 else :
                     print("We do not have this furniture type in our inventory.")
             
                 room = input("What room are you shopping for furniture for?")
                 if room == "Kitchen" :
-                    return ["Kitchen Chair"]
-                if room == "Dining Room" :
-                    return ["Dining Table"]
-                if room == "Living Room" :
-                    return ["Living Room Chair"]
+                    print(["Kitchen Chair"])
+                elif room == "Dining Room" :
+                    print(["Dining Table"])
+                elif room == "Living Room" :
+                    print(["Living Room Chair"])
                 else :
                     print("We do not have this room in our inventory.")
                                     
