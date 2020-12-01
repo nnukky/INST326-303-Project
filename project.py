@@ -86,7 +86,7 @@ class Helper:
                     nl = '\n'
                     print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
  
-                elif check == 4 and 100 <= [self.warehouse[item_price][1] <=800:
+                elif check == 4 and 100 <= [self.warehouse[item_price][1]] <=800:
                     nl = '\n'
                     print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
                 
