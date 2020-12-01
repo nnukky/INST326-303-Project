@@ -52,10 +52,10 @@ class Helper:
             for key in self.warehouse:
                 if compare == self.warehouse[key][3]:
                     nl = '\n'
-                    print(f"item:{nl}{[self.warehouse[key][0]]}") 
-            self.price_search()        
+                    print(f"ITEM:{nl}{self.warehouse[key][0]}") 
+            self.price_search(selection)        
     
-    def price_search(self):
+    def price_search(self, selection):
         """Allows customer to search by price of items
         Parameters:
             self.price(dict): Dictionary mapped to price of goods
@@ -74,7 +74,7 @@ class Helper:
             price_range = int(input("Insert a number: "))
             check = price_range_list[price_range - 1]
         if price == "no":
-            self.narrow_categories(check)
+            self.narrow_categories(selection)
         for item_price in self.warehouse:
             if check == 1 and self.warehouse[item_price][2] < 5:
                 nl = '\n'
@@ -106,7 +106,7 @@ class Helper:
             (list): list of possible items to browse determined by their answer to the questions
         """
         
-        narrow = input("Would you like to narrow down the category you are searching in?")
+        narrow = input("Would you like to narrow down the category you are searching in?(yes/no)")
         if narrow == "no" :
             self.item_attributes()
         if narrow == "yes" :
