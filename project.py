@@ -52,7 +52,7 @@ class Helper:
             for key in self.warehouse:
                 if compare == self.warehouse[key][3]:
                     nl = '\n'
-                    print(f"ITEM:{self.warehouse[key][0]}{nl}") 
+                    print(f"ITEM:{nl}{self.warehouse[key][0]}") 
             self.price_search(selection)        
     
     def price_search(self, selection):
@@ -73,29 +73,28 @@ class Helper:
                 print(f"{num}: {number}")
             price_range = int(input("Insert a number: "))
             check = price_range_list[price_range - 1]
-            for item_price in self.warehouse:
-                if check == 1 and self.warehouse[item_price][1] < 5:
-                    nl = '\n'
-                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
-            
-                elif check == 2 and 5 <= [self.warehouse[item_price][1]] <=29.99:
-                    nl = '\n'
-                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
-            
-                elif check == 3 and 30 <= [self.warehouse[item_price][1]] <=99.99:
-                    nl = '\n'
-                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
- 
-                elif check == 4 and 100 <= [self.warehouse[item_price][1] <=800:
-                    nl = '\n'
-                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
-                
-                elif check == 5 and [self.warehouse[item_price][1]] > 800:
-                    nl = '\n'
-                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
         if price == "no":
             self.narrow_categories(selection)
-        
+        for item_price in self.warehouse:
+            if check == 1 and self.warehouse[item_price][2] < 5:
+                nl = '\n'
+                print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+            
+            if check == 2 and 5 <= [self.warehouse[item_price][2]] <=29.99:
+                nl = '\n'
+                print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+            
+            if check == 3 and 30 <= [self.warehouse[item_price][2]] <=99.99:
+                nl = '\n'
+                print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+ 
+            if check == 4 and 100 <= [self.warehouse[item_price][2]] <=800:
+                nl = '\n'
+                print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+                
+            if check == 5 and [self.warehouse[item_price][2]] > 800:
+                nl = '\n'
+                print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
                     
                       
     def narrow_categories(self, selection):
@@ -111,126 +110,126 @@ class Helper:
         if narrow == "no" :
             self.item_attributes()
         if narrow == "yes" :
-            if selection == 1 :
+            while selection == 1 :
                 brand = input("What brand are you looking for? ")
                 if brand == "Apple" :
-                    print(["iPhone 12", "iPad", "Macbook Pro", "Apple Watch"])
-                elif brand == "Android" :
-                    print(["Android"])
-                elif brand == "Samsung" :
-                    print(["Samsung TV"])
+                    return ["iPhone 12", "iPad", "Macbook Pro", "Apple Watch"]
+                if brand == "Android" :
+                    return ["Android"]
+                if brand == "Samsung" :
+                    return ["Samsung TV"]
                 else :
                     print("We do not have this brand in our inventory.")
                 
                 electronic_type = input("What type of electronic are you looking for? ")
                 if electronic_type == "phone":
-                    print(["iPhone", "Android"])
-                elif electronic_type == "TV": 
-                    print(["Samsung TV"])
-                elif electronic_type == "Tablet" :
-                    print(["iPad"])
-                elif electronic_type == "Watch" :
-                    print(["Apple Watch"])
+                    return ["iPhone", "Android"]
+                if electronic_type == "TV": 
+                    return ["Samsung TV"]
+                if electronic_type == "Tablet" :
+                    return ["iPad"]
+                if electronic_type == "Watch" :
+                    return ["Apple Watch"]
                 else :
                     print("We do not have this electronic type in our inventory.")
                 
-            if selection == 2 :
+            while selection == 2 :
                 color = input("What color of paper product are you looking for?")
                 if color == "Blue" :
-                    print(["Blue Napkins"])
-                elif color == "White" :
-                    print(["White Paper Towels"])
-                elif color == "Brown" :
-                    print(["Brown Paper Bags"])
-                elif color == "Red" :
-                    print(["Red Napkins"])
-                elif color == "Multicolor" :
-                    print(["Birthday Paper Plates"])
+                    return ["Blue Napkins"]
+                if color == "White" :
+                    return ["White Paper Towels"]
+                if color == "Brown" :
+                    return ["Brown Paper Bags"]
+                if color == "Red" :
+                    return ["Red Napkins"]
+                if color == "Multicolor" :
+                    return ["Birthday Paper Plates"]
                 else :
                     print("We do not have this color in our inventory.")
                 
                 paper_product_type = input("What type of paper product are you looking for?")
                 if paper_product_type == "Napkins" :
-                    print(["Blue Napkins", "Red Napkins"])
-                elif paper_product_type == "Paper Towels":
-                    print(["White Paper Towels"])
-                elif paper_product_type == "Paper Bags" :
-                    print(["Brown Paper Bags"])
-                elif paper_product_type == "Plates" :
-                    print(["Birthday Paper Plates"])
+                    return ["Blue Napkins", "Red Napkins"]
+                if paper_product_type == "Paper Towels":
+                    return ["White Paper Towels"]
+                if paper_product_type == "Paper Bags" :
+                    return ["Brown Paper Bags"]
+                if paper_product_type == "Plates" :
+                    return ["Birthday Paper Plates"]
                 else :
                     print("We do not have this paper product type in our inventory.")
                 
                 occasion = input("What type of occasion are you shopping for?")
                 if occasion == "Birthday" :
-                    print(["Birthday Paper Plates"])
+                    return ["Birthday Paper Plates"]
                 else :
                     print("We do not have this occasion in our inventory.")
                 
-            if selection == 3 :
+            while selection == 3 :
                 dairy_type = input("What type of dairy are you looking for?")
                 if dairy_type == "Milk" :
-                    print(["2% Milk", "Half and Half"])
-                elif dairy_type == "Cheese" :
-                    print(["Mozzarella Cheese"])
-                elif dairy_type == "Yogurt" :
-                    print(["Yoplait Yogurt"])
-                elif dairy_type == "Ice Cream" :
-                    print(["Ben and Jerry's Ice Cream"])
+                    return ["2% Milk", "Half and Half"]
+                if dairy_type == "Cheese" :
+                    return ["Mozzarella Cheese"]
+                if dairy_type == "Yogurt" :
+                    return ["Yoplait Yogurt"]
+                if dairy_type == "Ice Cream" :
+                    return ["Ben and Jerry's Ice Cream"]
                 else :
                     print("We do not have this dairy type in our inventory.")
                 
                 dairy_brand = input("What brand of dairy are you looking for?")
                 if dairy_brand == "Yoplait" :
-                    print(["Yoplait Yogurt"])
-                elif dairy_brand == "Ben and Jerry's" :
-                    print(["Ben and Jerry's Ice Cream"])
+                    return ["Yoplait Yogurt"]
+                if dairy_brand == "Ben and Jerry's" :
+                    return ["Ben and Jerry's Ice Cream"]
                 else :
                     print("We do not have this brand in our inventory.")
                 
-            if selection == 4 :
+            while selection == 4 :
                 bakery_type = input("What type of baked good are you looking for?")
                 if bakery_type == "Bagels" :
-                    print(["Thomas Bagels"])
-                elif bakery_type == "Donuts" :
-                    print(["Glazed Donuts"])
-                elif bakery_type == "Cake" :
-                    print(["Birthday Cake"])
-                elif bakery_type == "Bread" :
-                    print(["French Baguette", "Sourdough Bread"])
+                    return ["Thomas Bagels"]
+                if bakery_type == "Donuts" :
+                    return ["Glazed Donuts"]
+                if bakery_type == "Cake" :
+                    return ["Birthday Cake"]
+                if bakery_type == "Bread" :
+                    return ["French Baguette", "Sourdough Bread"]
                 else :
                     print("We do not have this type of baked good in our inventory.")
             
                 bakery_brand = input("What brand of baked good are you looking for?")
                 if bakery_brand == "Thomas" :
-                    print(["Thomas Bagels"])
+                    return ["Thomas Bagels"]
                 else :
                     print("We do not have this brand in our inventory.")
             
                 bakery_occasion = input("What occasion are you shopping for?")
                 if bakery_occasion == "Birthday" :
-                    print(["Birthday Cake"])
+                    return ["Birthday Cake"]
                 else :
                     print("We do not have this occasion in our inventory.")
                 
-            if selection == 5 :
+            while selection == 5 :
                 furniture_type = input("What furniture type are you looking for?")
                 if furniture_type == "Chair" :
-                    print(["Kitchen Chair", "Living Room Chair"])
-                elif furniture_type == "Couch" :
-                    print(["Couch"])
-                elif furniture_type == "Table" :
-                    print(["Dining Table", "School Desk"])
+                    return ["Kitchen Chair", "Living Room Chair"]
+                if furniture_type == "Couch" :
+                    return ["Couch"]
+                if furniture_type == "Table" :
+                    return ["Dining Table", "School Desk"]
                 else :
                     print("We do not have this furniture type in our inventory.")
             
                 room = input("What room are you shopping for furniture for?")
                 if room == "Kitchen" :
-                    print(["Kitchen Chair"])
-                elif room == "Dining Room" :
-                    print(["Dining Table"])
-                elif room == "Living Room" :
-                    print(["Living Room Chair"])
+                    return ["Kitchen Chair"]
+                if room == "Dining Room" :
+                    return ["Dining Table"]
+                if room == "Living Room" :
+                    return ["Living Room Chair"]
                 else :
                     print("We do not have this room in our inventory.")
                                     
