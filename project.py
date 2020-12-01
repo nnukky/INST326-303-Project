@@ -74,25 +74,25 @@ class Helper:
             price_range = int(input("Insert a number: "))
             check = price_range_list[price_range - 1]
             for item_price in self.warehouse:
-                if check == 1 and self.warehouse[item_price][2] < 5:
+                if check == 1 and self.warehouse[item_price][1] < 5:
                     nl = '\n'
-                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
             
-                elif check == 2 and 5 <= [self.warehouse[item_price][2]] <=29.99:
+                elif check == 2 and 5 <= [self.warehouse[item_price][1]] <=29.99:
                     nl = '\n'
-                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
             
-                elif check == 3 and 30 <= [self.warehouse[item_price][2]] <=99.99:
+                elif check == 3 and 30 <= [self.warehouse[item_price][1]] <=99.99:
                     nl = '\n'
-                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
  
-                elif check == 4 and 100 <= [self.warehouse[item_price][2]] <=800:
+                elif check == 4 and 100 <= [self.warehouse[item_price][1] <=800:
                     nl = '\n'
-                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
                 
-                elif check == 5 and [self.warehouse[item_price][2]] > 800:
+                elif check == 5 and [self.warehouse[item_price][1]] > 800:
                     nl = '\n'
-                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][2]]}") 
+                    print(f"{nl}{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}") 
         if price == "no":
             self.narrow_categories(selection)
         
