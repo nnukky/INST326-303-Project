@@ -28,6 +28,7 @@ class Helper:
         self.departments = ["Electronics", "Paper Products", "Dairy", "Bakery", "Furniture"]
         self.warehouse = store
         self.cart = {}    
+        self.userDepartment={}
         
     def categories_search(self):
         """
@@ -50,6 +51,37 @@ class Helper:
                 num += 1
                 print(f"{num}: {item}")
             selection = int(input("Insert a number: "))
+            if selection==1:
+                self.userDepartment={1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8), 
+            2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2),
+            3: ('Samsung 60" TV', 799.99, "Aisle 2", "Electronics", 3), 
+            4: ("iPad Pro", 599.99, "Aisle 1", "Electronics", 2),
+            5: ("Apple Watch", 399.99, "Aisle 1", "Electronics", 1),
+            6: ("Samsung S20", 899.99, "Aisle 2", "Electronics", 6)}
+            elif selection==2:
+                self.userDepartment={7: ("Blue Napkins", 6.99, "Aisle 4", "Paper Products", 10),
+            8: ("White Paper Towels", 4.99, "Aisle 3", "Paper Products", 4),
+            9: ("Birthday Paper Plates", 3.99, "Aisle 4", "Paper Products", 1),
+            10: ("Red Napkins", 6.99, "Aisle 4", "Paper Products", 10),
+            11: ("Brown Paper Bags", 2.99, "Aisle 3", "Paper Products", 5)}
+            elif selection==3:
+                self.userDepartment={12: ("2% Milk", 2.99, "Aisle 5", "Dairy", 18),
+            13: ("Half & Half", 3.99, "Aisle 5", "Dairy", 6),
+            14: ("Mozzarella Cheese", 2.99, "Aisle 5", "Dairy", 8),
+            15: ("Yoplait Yogurt", 1.99, "Aisle 5", "Dairy", 28),
+            16: ("Ben & Jerry's Ice Cream", 6.99, "Aisle 6", "Dairy", 7)}   
+            elif selection==4:
+                self.userDepartment={17: ("Thomas Bagels", 5.99, "Aisle 7", "Bakery", 10),
+            18: ("Glazed Donuts", 7.99, "Aisle 6", "Bakery", 6),
+            19: ("Birthday Cake", 27.99, "Aisle 6", "Bakery", 1),
+            20: ("French Baguette", 5.99, "Aisle 7", "Bakery", 8),
+            21: ("Sourdough Bread", 4.99, "Aisle 7", "Bakery", 6)}   
+            elif selection==5:
+                self.userDepartment={22: ("Kitchen Chair", 64.99, "Aisle 8", "Furniture", 4),
+            23: ("Couch", 249.99, "Aisle 8", "Furniture", 2),
+            24: ("Dining Table", 129.99, "Aisle 9", "Furniture", 1),
+            25: ("Living Room Chair", 74.99, "Aisle 8", "Furniture", 8),
+            26: ("School Desk", 119.99, "Aisle 9", "Furniture", 2)}              
             compare = self.departments[selection - 1]
             for key in self.warehouse:
                 if compare == self.warehouse[key][3]:
@@ -76,29 +108,19 @@ class Helper:
             for number in price_range_list:
                 num += 1
                 print(f"{num}: {number}")
-            price_range = int(input("Insert a number: "))
-            check = price_range_list[price_range - 1]
-            for item_price in self.warehouse:
-                if check == 1 and self.warehouse[item_price][1] < 5.0:
-                    nl = '\n'
-                    print(f"{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}{nl}") 
-            
-                elif check == 2 and 5.0 <= [self.warehouse[item_price][1]] <=29.99:
-                    nl = '\n'
-                    print(f"{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}{nl}") 
-            
-                elif check == 3 and 30.0 <= [self.warehouse[item_price][1]] <=99.99:
-                    nl = '\n'
-                    print(f"{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}{nl}") 
-
-                elif check == 4 and 100.0 <= [self.warehouse[item_price][1]] <=800.0:
-                    nl = '\n'
-                    print(f"{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}{nl}") 
-                
-                elif check == 5 and [self.warehouse[item_price][1]] > 800.0:
-                    nl = '\n'
-                    print(f"{[self.warehouse[item_price][0]]}:{[self.warehouse[item_price][1]]}{nl}") 
-        if price == "no":
+            price_range = int(input("Insert a number: "))            
+            for item_price in self.userDepartment:
+                if price_range == 1 and self.userDepartment[item_price][1] <5.0:
+                    print(f"{self.userDepartment[item_price][0]}\n")
+                elif price_range == 2 and 5.0<=self.userDepartment[item_price][1]<=29.99:
+                    print(f"{self.userDepartment[item_price][0]}\n")
+                elif price_range == 3 and 29.99<self.userDepartment[item_price][1]<=99.99:
+                    print(f"{self.userDepartment[item_price][0]}\n")
+                elif price_range == 4 and 100.0<self.userDepartment[item_price][1]<=800.0:
+                    print(f"{self.userDepartment[item_price][0]}\n")            
+                elif price_range == 5 and self.userDepartment[item_price][1] >800.0:
+                  print(f"{self.userDepartment[item_price][0]}\n")
+        else:
             self.narrow_categories(selection)
         
                     
