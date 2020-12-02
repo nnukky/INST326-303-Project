@@ -32,11 +32,13 @@ class Helper:
     def categories_search(self):
         """
         Allow the user to identify what item they are looking for
-        Raises:
-            Type Error: raised if value isn't in correctly
+
         Returns:
             returns a list of products from each category OR
             returns specific item detail of that option is selected
+        Side Effects:
+            prints different department selections
+            prints each of the 6 items in chosen department   
         """        
         specific_search = input("Do you want to search for a specific item? (yes/no): ").strip().lower()
         if specific_search == "yes":
@@ -56,13 +58,16 @@ class Helper:
             self.price_search(selection)        
     
     def price_search(self, selection):
-        """Allows customer to search by price of items
+        """Allows customer to search by price of items of chosen category
         Parameters:
-            self.price(dict): Dictionary mapped to price of goods
+            selection(int): category number they are searching in
         Raises:
             ValueError: Value error is price is entered correctly
         Returns:
-            #items at specific price    
+            items at given price within chose category OR
+            proceeds onto narrow_categories    
+        Side Effects:
+            prints price range options    
         """     
         price_range_list = [ "<$5" , "$5-$29.99", "$30-$99.99", "$100-$800", ">$800"]
         price = input("Do you wish to narrow down your results by searching by price? (yes/no): ").strip().lower()
