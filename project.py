@@ -86,7 +86,7 @@ class Helper:
             for key in self.warehouse:
                 if compare == self.warehouse[key][3]:
                     nl = '\n'
-                    print(f"ITEM:{self.warehouse[key][0]}{nl}") 
+                    print(f"Item:{self.warehouse[key][0]}{nl}") 
             self.price_search(selection)        
     
     def price_search(self, selection):
@@ -111,15 +111,15 @@ class Helper:
             price_range = int(input("Insert a number: "))            
             for item_price in self.userDepartment:
                 if price_range == 1 and self.userDepartment[item_price][1] <5.0:
-                    print(f"{self.userDepartment[item_price][0]}\n")
+                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}\n")
                 elif price_range == 2 and 5.0<=self.userDepartment[item_price][1]<=29.99:
-                    print(f"{self.userDepartment[item_price][0]}\n")
+                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}\n")
                 elif price_range == 3 and 29.99<self.userDepartment[item_price][1]<=99.99:
-                    print(f"{self.userDepartment[item_price][0]}\n")
+                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}\n")
                 elif price_range == 4 and 100.0<self.userDepartment[item_price][1]<=800.0:
-                    print(f"{self.userDepartment[item_price][0]}\n")            
+                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}\n")            
                 elif price_range == 5 and self.userDepartment[item_price][1] >800.0:
-                  print(f"{self.userDepartment[item_price][0]}\n")
+                  print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}\n")
         else:
             self.narrow_categories(selection)
         
