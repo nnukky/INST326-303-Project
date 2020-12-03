@@ -20,7 +20,9 @@ class Helper:
     
     def __init__(self, store):
         """
-        Initalize instance of Helper
+        Purpose to initalize instance of Helper
+        Parameters: (dic) store - where all store data comes from
+        Returns: none
         Side effects: 
             modifies warehouse, cart, and departments attributes
         """
@@ -32,8 +34,8 @@ class Helper:
         
     def categories_search(self):
         """
-        Allow the user to identify what item they are looking for
-
+        Purpose to allow the user to identify what item they are looking for
+        Parameters: none
         Returns:
             returns a list of products from each category OR
             returns specific item detail of that option is selected
@@ -90,7 +92,8 @@ class Helper:
             self.price_search(selection)        
     
     def price_search(self, selection):
-        """Allows customer to search by price of items of chosen category
+        """
+        Purpose to allow customer to search by price of items of chosen category
         Parameters:
             selection(int): category number they are searching in
         Raises:
@@ -126,13 +129,13 @@ class Helper:
                       
     def narrow_categories(self, selection):
         """
-        Prompts the user with questions to help narrow down options even further
+        Purpose to prompt the user with questions to help narrow down options even further
         Args: 
             selection(int): category number they are searching in
         Returns:
             (list): list of possible items to browse determined by their answer to the questions
-        """
-        
+        Side effects: none
+        """        
         narrow = input("Would you like to narrow down the category you are searching in?(yes/no)")
         if narrow == "no" :
             self.item_attributes()
@@ -262,11 +265,12 @@ class Helper:
                                     
     def item_attributes(self):
         """
-        Ask the user what item they are searching for and shows the user the information of the item they chose
+        Purpose to ask the user what item they are searching for and shows the user the information of the item they chose
         Raises:
             ValueError: raised if an item doesn't exist in the store
         Returns:
             str of item information
+        Side effects: none    
         """
         item = input("What item are you searching for?")
         for key in self.warehouse :
@@ -284,6 +288,7 @@ class Helper:
             ValueError: Value error if a suggested item is out of stock
         Returns:
             (list) List of suggested items to purchase
+        Side effects: none    
         """        
         count = []
         for i in self.cart:
@@ -324,7 +329,9 @@ class Helper:
         Raises:
             ValueError: if total cost is less than 0
         Returns:
-            float of the final total cost"""
+            float of the final total cost
+        Side effects: none    
+            """
         
         total = 0
         for i in self.cart:
@@ -339,12 +346,12 @@ class Helper:
         Returns: none
         Side effects: changes self.cart
         """
-        self.cart[int(itemNum)]=store[int(itemNum)] 
-        
+        self.cart[int(itemNum)]=store[int(itemNum)]         
         
 def create_store():
     """
     Purpose is to create the warehouse with items and their information in a dictionary
+    This is where all data comes from!
     Parameters: none
     Returns:  dictionary with warehouse items
     Side effects: none
@@ -377,9 +384,13 @@ def create_store():
             26: ("School Desk (item id 26)", 119.99, "Aisle 9", "Furniture", 2)}         
 
 def find_location(store):
-    """Guides the user to find the item they want
+    """
+    Purpose to guide the user to find the item they want
     Args:
-        store (dict): warehouse items"""
+        store (dict): warehouse items
+    Returns: none
+    Side effects: prints  to console    
+        """
     
     departments = ["Electronics", "Paper Products", "Dairy", "Bakery", "Furniture"]
     num = 0
@@ -399,7 +410,12 @@ def find_location(store):
         print(f"Check {finder[k].lower()} for {k}")
 
 def parse_args(arglist):
-    """ Parse command-line arguments. """
+    """ 
+    Purpose to parse command-line arguments.
+    Parameters: (list) arglist - list of arguments
+    Returns: namespace with action
+    Side effects: none    
+    """
     parser = ArgumentParser()
     parser.add_argument("action", type=str,
                         help="'find' to find an item location, 'store' to find items, or 'buy' to purchase items")
@@ -414,14 +430,14 @@ if __name__ == "__main__":
     elif args.action == "store":        
         user.categories_search()
     elif args.action == "buy":
-        itemId=input("Enter the item ID you want to add to cart")
+        itemId=input("Enter the item ID you want to add to cart: ")
         user.add_to_cart(itemId) 
         user.check_cart()  
-        buyAnother=input("Buy more? (yes/no)")
+        buyAnother=input("Buy more? (yes/no): ")
         while buyAnother=="yes":            
-            itemId=input("Enter the item ID you want to add to cart")
+            itemId=input("Enter the item ID you want to add to cart: ")
             user.add_to_cart(itemId) 
             user.check_cart()  
-            buyAnother=input("Buy more? (yes/no)")        
+            buyAnother=input("Buy more? (yes/no): ")        
     else: 
         raise ValueError("Type either find, store, or buy")
