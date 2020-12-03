@@ -102,7 +102,7 @@ class Helper:
         """
         Prompts the user with questions to help narrow down options even further
         Args: 
-            selection(int)): category number they are searching in
+            selection(int): category number they are searching in
         Returns:
             (list): list of possible items to browse determined by their answer to the questions
         """
@@ -236,9 +236,7 @@ class Helper:
                                     
     def item_attributes(self):
         """
-        Show the user the information of the item they chose
-        Args:
-            item(str): name of the item they searched
+        Ask the user what item they are searching for and shows the user the information of the item they chose
         Raises:
             ValueError: raised if an item doesn't exist in the store
         Returns:
@@ -248,6 +246,8 @@ class Helper:
         for key in self.warehouse :
             if item == self.warehouse[key][0] :
                 print(f"{item} is ${self.warehouse[key][1]} and you can find it in {self.warehouse[key][2]} in the {self.warehouse[key][3]} Department. We currently have {self.warehouse[key][4]} in stock.")
+            else: 
+                raise ValueError("This item does not exist in the store.")
         
     def suggestions(self):
         """
