@@ -122,8 +122,7 @@ class Helper:
                   print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}\n")
         else:
             self.narrow_categories(selection)
-        
-                    
+          
                       
     def narrow_categories(self, selection):
         """
@@ -313,12 +312,10 @@ class Helper:
         Parameters: none
         Returns: none
         Side effects: prints to console        
-        """        
-        #example format: Item#: toilet paper, Price: $2:99, Aisle: 6, Department: example, # In Stock: 5
-        
+        """              
+        print("Your cart currently has...")
         for item in self.cart:
-            print (f"item: {self.cart[item][0]}, price: {self.cart[item][1]}") 
-            print (f"aisle: {self.cart[item][2]}, department: {self.cart[item][3]}, stock: {self.cart[item][4]}")
+            print (f"item: {self.cart[item][0]}, price: {self.cart[item][1]}")            
         
     def cart_total(self):
         """
@@ -342,10 +339,8 @@ class Helper:
         Returns: none
         Side effects: changes self.cart
         """
-        self.cart[len(self.cart)+1]=store[itemNum] 
+        self.cart[int(itemNum)]=store[int(itemNum)] 
         
-        
-    
         
 def create_store():
     """
@@ -354,32 +349,32 @@ def create_store():
     Returns:  dictionary with warehouse items
     Side effects: none
     """    
-    return {1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8), 
-            2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2),
-            3: ('Samsung 60" TV', 799.99, "Aisle 2", "Electronics", 3), 
-            4: ("iPad Pro", 599.99, "Aisle 1", "Electronics", 2),
-            5: ("Apple Watch", 399.99, "Aisle 1", "Electronics", 1),
-            6: ("Samsung S20", 899.99, "Aisle 2", "Electronics", 6),
-            7: ("Blue Napkins", 6.99, "Aisle 4", "Paper Products", 10),
-            8: ("White Paper Towels", 4.99, "Aisle 3", "Paper Products", 4),
-            9: ("Birthday Paper Plates", 3.99, "Aisle 4", "Paper Products", 1),
-            10: ("Red Napkins", 6.99, "Aisle 4", "Paper Products", 10),
-            11: ("Brown Paper Bags", 2.99, "Aisle 3", "Paper Products", 5),
-            12: ("2% Milk", 2.99, "Aisle 5", "Dairy", 18),
-            13: ("Half & Half", 3.99, "Aisle 5", "Dairy", 6),
-            14: ("Mozzarella Cheese", 2.99, "Aisle 5", "Dairy", 8),
-            15: ("Yoplait Yogurt", 1.99, "Aisle 5", "Dairy", 28),
-            16: ("Ben & Jerry's Ice Cream", 6.99, "Aisle 6", "Dairy", 7),
-            17: ("Thomas Bagels", 5.99, "Aisle 7", "Bakery", 10),
-            18: ("Glazed Donuts", 7.99, "Aisle 6", "Bakery", 6),
-            19: ("Birthday Cake", 27.99, "Aisle 6", "Bakery", 1),
-            20: ("French Baguette", 5.99, "Aisle 7", "Bakery", 8),
-            21: ("Sourdough Bread", 4.99, "Aisle 7", "Bakery", 6),
-            22: ("Kitchen Chair", 64.99, "Aisle 8", "Furniture", 4),
-            23: ("Couch", 249.99, "Aisle 8", "Furniture", 2),
-            24: ("Dining Table", 129.99, "Aisle 9", "Furniture", 1),
-            25: ("Living Room Chair", 74.99, "Aisle 8", "Furniture", 8),
-            26: ("School Desk", 119.99, "Aisle 9", "Furniture", 2)}         
+    return {1: ("iPhone 12 (item id 1)", 999.99, "Aisle 1", "Electronics", 8), 
+            2: ("Macbook Pro (item id 2)", 1299.29, "Aisle 1", "Electronics", 2),
+            3: ('Samsung 60 (item id 3)" TV', 799.99, "Aisle 2", "Electronics", 3), 
+            4: ("iPad Pro (item id 4)", 599.99, "Aisle 1", "Electronics", 2),
+            5: ("Apple Watch (item id 5)", 399.99, "Aisle 1", "Electronics", 1),
+            6: ("Samsung S20 (item id 6)", 899.99, "Aisle 2", "Electronics", 6),
+            7: ("Blue Napkins (item id 7)", 6.99, "Aisle 4", "Paper Products", 10),
+            8: ("White Paper Towels (item id 8)", 4.99, "Aisle 3", "Paper Products", 4),
+            9: ("Birthday Paper Plates (item id 9)", 3.99, "Aisle 4", "Paper Products", 1),
+            10: ("Red Napkins (item id 10)", 6.99, "Aisle 4", "Paper Products", 10),
+            11: ("Brown Paper Bags (item id 11)", 2.99, "Aisle 3", "Paper Products", 5),
+            12: ("2% Milk (item id 12)", 2.99, "Aisle 5", "Dairy", 18),
+            13: ("Half & Half (item id 13)", 3.99, "Aisle 5", "Dairy", 6),
+            14: ("Mozzarella Cheese (item id 14)", 2.99, "Aisle 5", "Dairy", 8),
+            15: ("Yoplait Yogurt (item id 15)", 1.99, "Aisle 5", "Dairy", 28),
+            16: ("Ben & Jerry's Ice Cream (item id 16)", 6.99, "Aisle 6", "Dairy", 7),
+            17: ("Thomas Bagels (item id 17)", 5.99, "Aisle 7", "Bakery", 10),
+            18: ("Glazed Donuts (item id 18)", 7.99, "Aisle 6", "Bakery", 6),
+            19: ("Birthday Cake (item id 19)", 27.99, "Aisle 6", "Bakery", 1),
+            20: ("French Baguette (item id 20)", 5.99, "Aisle 7", "Bakery", 8),
+            21: ("Sourdough Bread (item id 21)", 4.99, "Aisle 7", "Bakery", 6),
+            22: ("Kitchen Chair (item id 22)", 64.99, "Aisle 8", "Furniture", 4),
+            23: ("Couch (item id 23)", 249.99, "Aisle 8", "Furniture", 2),
+            24: ("Dining Table (item id 24)", 129.99, "Aisle 9", "Furniture", 1),
+            25: ("Living Room Chair (item id 25)", 74.99, "Aisle 8", "Furniture", 8),
+            26: ("School Desk (item id 26)", 119.99, "Aisle 9", "Furniture", 2)}         
 
 def find_location(store):
     """Guides the user to find the item they want
@@ -407,17 +402,26 @@ def parse_args(arglist):
     """ Parse command-line arguments. """
     parser = ArgumentParser()
     parser.add_argument("action", type=str,
-                        help="'find' to find an item or 'store' to purchase items")
+                        help="'find' to find an item location, 'store' to find items, or 'buy' to purchase items")
     return parser.parse_args(arglist)
-
 
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
     store = create_store()
+    user = Helper(store)
     if args.action == "find":
         find_location(store)
-    elif args.action == "store":
-        user = Helper(store)
+    elif args.action == "store":        
         user.categories_search()
+    elif args.action == "buy":
+        itemId=input("Enter the item ID you want to add to cart")
+        user.add_to_cart(itemId) 
+        user.check_cart()  
+        buyAnother=input("Buy more? (yes/no)")
+        while buyAnother=="yes":            
+            itemId=input("Enter the item ID you want to add to cart")
+            user.add_to_cart(itemId) 
+            user.check_cart()  
+            buyAnother=input("Buy more? (yes/no)")        
     else: 
-        raise ValueError("Type either find or store")
+        raise ValueError("Type either find, store, or buy")
