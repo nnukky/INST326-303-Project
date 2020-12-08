@@ -337,7 +337,7 @@ class Helper:
         for i in self.cart:
             total += self.cart[i][1]
         
-        print(f"Your total is {total}")
+        print(f"Your total is {round(total, 2)}")
         
     def add_to_cart(self, itemNum):
         """
@@ -438,6 +438,9 @@ if __name__ == "__main__":
             itemId=input("Enter the item ID you want to add to cart: ")
             user.add_to_cart(itemId) 
             user.check_cart()  
-            buyAnother=input("Buy more? (yes/no): ")        
+            buyAnother=input("Buy more? (yes/no): ")
+        user.suggestions()
+        user.cart_total()
+                
     else: 
         raise ValueError("Type either find, store, or buy")
