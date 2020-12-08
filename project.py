@@ -307,7 +307,7 @@ class Helper:
         suggestions = all_items.difference(cart_items)
 
         if len(suggestions) > 0:
-            print("SUGGESTED ITEMS:\n")
+            print("\nSUGGESTED ITEMS:")
             for s in suggestions:
                 print(f"{s}")
         
@@ -337,7 +337,7 @@ class Helper:
         for i in self.cart:
             total += self.cart[i][1]
         
-        print(f"Your total is {round(total, 2)}")
+        print(f"\nYour total is {round(total, 2)}")
         
     def add_to_cart(self, itemNum):
         """
@@ -432,14 +432,16 @@ if __name__ == "__main__":
     elif args.action == "buy":
         itemId=input("Enter the item ID you want to add to cart: ")
         user.add_to_cart(itemId) 
-        user.check_cart()  
-        buyAnother=input("Buy more? (yes/no): ")
+        user.check_cart()
+        user.suggestions()
+        buyAnother=input("\nBuy more? (yes/no): ")
         while buyAnother=="yes":            
             itemId=input("Enter the item ID you want to add to cart: ")
             user.add_to_cart(itemId) 
-            user.check_cart()  
+            user.check_cart()
+            user.suggestions()
+            user.cart_total()  
             buyAnother=input("Buy more? (yes/no): ")
-        user.suggestions()
         user.cart_total()
                 
     else: 
