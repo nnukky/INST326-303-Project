@@ -1,6 +1,6 @@
 # INST326-303-Project
 
-Our peoject represents a warehouse store wherea user will be able to 
+Our peoject represents a warehouse store where a user will be able to 
 find an items location, search the store for a specific item, or add
 items to your cart.
 
