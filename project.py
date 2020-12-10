@@ -347,7 +347,7 @@ class Helper:
         Returns: none
         Side effects: changes self.cart
         """
-        self.cart[int(itemNum)]=store[int(itemNum)]       
+        self.cart[int(itemNum)]=self.warehouse[int(itemNum)]       
         
 def create_store():
     """
