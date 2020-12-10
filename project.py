@@ -315,12 +315,13 @@ class Helper:
         """
         Purpose is to get a summary of what is currently in a user's cart and display to user
         Parameters: none
-        Returns: none
+        Returns: (dict) self.cart
         Side effects: prints to console        
         """              
         print("Your cart currently has...")
         for item in self.cart:
-            print (f"item: {self.cart[item][0]}, price: {self.cart[item][1]}")            
+            print (f"item: {self.cart[item][0]}, price: ${self.cart[item][1]}") 
+        return self.cart               
         
     def cart_total(self):
         """
@@ -337,17 +338,18 @@ class Helper:
         for i in self.cart:
             total += self.cart[i][1]
         
-        print(f"\nYour total is {round(total, 2)}")
+        print(f"\nYour total is ${round(total, 2)}")
         return total
         
     def add_to_cart(self, itemNum):
         """
         Purpose is to add item to cart
         Parameters: (int) itemNum - number for identifying item
-        Returns: none
+        Returns: (dict) self.cart
         Side effects: changes self.cart
         """
-        self.cart[int(itemNum)]=self.warehouse[int(itemNum)]       
+        self.cart[int(itemNum)]=self.warehouse[int(itemNum)]  
+        return self.cart[int(itemNum)]     
         
 def create_store():
     """
