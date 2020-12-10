@@ -338,6 +338,7 @@ class Helper:
             total += self.cart[i][1]
         
         print(f"\nYour total is {round(total, 2)}")
+        return total
         
     def add_to_cart(self, itemNum):
         """
@@ -346,7 +347,7 @@ class Helper:
         Returns: none
         Side effects: changes self.cart
         """
-        self.cart[int(itemNum)]=store[int(itemNum)]         
+        self.cart[int(itemNum)]=store[int(itemNum)]       
         
 def create_store():
     """
