@@ -136,7 +136,7 @@ class Helper:
             (list): list of possible items to browse determined by their answer to the questions
         Side effects: none
         """        
-        narrow = input("Would you like to narrow down the category you are searching in?(yes/no)")
+        narrow = input("Would you like to narrow down the category you are searching in? (yes/no) ")
         if narrow == "no" :
             self.item_attributes()
         if narrow == "yes" :
@@ -164,7 +164,7 @@ class Helper:
                     print("We do not have this electronic type in our inventory.")
                 
             if selection == 2 :
-                color = input("What color of paper product are you looking for?")
+                color = input("What color of paper product are you looking for? ")
                 if color == "Blue" :
                     print(["Blue Napkins"])
                 elif color == "White" :
@@ -178,7 +178,7 @@ class Helper:
                 else :
                     print("We do not have this color in our inventory.")
                 
-                paper_product_type = input("What type of paper product are you looking for?")
+                paper_product_type = input("What type of paper product are you looking for? ")
                 if paper_product_type == "Napkins" :
                     print(["Blue Napkins", "Red Napkins"])
                 elif paper_product_type == "Paper Towels":
@@ -190,14 +190,14 @@ class Helper:
                 else :
                     print("We do not have this paper product type in our inventory.")
                 
-                occasion = input("What type of occasion are you shopping for?")
+                occasion = input("What type of occasion are you shopping for? ")
                 if occasion == "Birthday" :
                     print(["Birthday Paper Plates"])
                 else :
                     print("We do not have this occasion in our inventory.")
                 
             if selection == 3 :
-                dairy_type = input("What type of dairy are you looking for?")
+                dairy_type = input("What type of dairy are you looking for? ")
                 if dairy_type == "Milk" :
                     print(["2% Milk", "Half and Half"])
                 elif dairy_type == "Cheese" :
@@ -209,7 +209,7 @@ class Helper:
                 else :
                     print("We do not have this dairy type in our inventory.")
                 
-                dairy_brand = input("What brand of dairy are you looking for?")
+                dairy_brand = input("What brand of dairy are you looking for? ")
                 if dairy_brand == "Yoplait" :
                     print(["Yoplait Yogurt"])
                 elif dairy_brand == "Ben and Jerry's" :
@@ -218,7 +218,7 @@ class Helper:
                     print("We do not have this brand in our inventory.")
                 
             if selection == 4 :
-                bakery_type = input("What type of baked good are you looking for?")
+                bakery_type = input("What type of baked good are you looking for? ")
                 if bakery_type == "Bagels" :
                     print(["Thomas Bagels"])
                 elif bakery_type == "Donuts" :
@@ -230,20 +230,20 @@ class Helper:
                 else :
                     print("We do not have this type of baked good in our inventory.")
             
-                bakery_brand = input("What brand of baked good are you looking for?")
+                bakery_brand = input("What brand of baked good are you looking for? ")
                 if bakery_brand == "Thomas" :
                     print(["Thomas Bagels"])
                 else :
                     print("We do not have this brand in our inventory.")
             
-                bakery_occasion = input("What occasion are you shopping for?")
+                bakery_occasion = input("What occasion are you shopping for? ")
                 if bakery_occasion == "Birthday" :
                     print(["Birthday Cake"])
                 else :
                     print("We do not have this occasion in our inventory.")
                 
             if selection == 5 :
-                furniture_type = input("What furniture type are you looking for?")
+                furniture_type = input("What furniture type are you looking for? ")
                 if furniture_type == "Chair" :
                     print(["Kitchen Chair", "Living Room Chair"])
                 elif furniture_type == "Couch" :
@@ -253,7 +253,7 @@ class Helper:
                 else :
                     print("We do not have this furniture type in our inventory.")
             
-                room = input("What room are you shopping for furniture for?")
+                room = input("What room are you shopping for furniture for? ")
                 if room == "Kitchen" :
                     print(["Kitchen Chair"])
                 elif room == "Dining Room" :
@@ -272,7 +272,7 @@ class Helper:
             str of item information
         Side effects: none    
         """
-        item = input("What item are you searching for?")
+        item = input("What item are you searching for? ")
         for key in self.warehouse :
             if item == self.warehouse[key][0] :
                 print(f"{item} is ${self.warehouse[key][1]} and you can find it in {self.warehouse[key][2]} in the {self.warehouse[key][3]} Department. We currently have {self.warehouse[key][4]} in stock.")
