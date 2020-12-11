@@ -8,7 +8,6 @@ def test_cart_total():
     test.add_to_cart(23)
     test.add_to_cart(26)
     test.add_to_cart(19)    
-    assert test.cart_total() == 1299.29 + 249.99 + 119.99 + 27.99
     
     assert test.cart_total() == 1299.29 + 249.99 + 119.99 + 27.99
     
