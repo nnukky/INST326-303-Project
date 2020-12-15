@@ -14,14 +14,19 @@ class Helper:
     their cart, and checkout 
     Attributes:
         warehouse (dict): Contains the items available in the store and it's information
-        cart (dict): empty dictionary wih a customers cart
+            - format: {Item ID: (Item Name, Price, Aisle #, Department, # in stock)}
+            - datatypes: {int: tuple(str, float, str, str, int)}
+        cart (dict): dictionary wih a customers cart
+            - format: {Item ID: (Item Name, Price, Aisle #, Department, # in stock)}
+            - datatypes: {int: tuple(str, float, str, str, int)}
         departments(list): list of departments in the store
+            - datatypes: [str, str, str, str, str]
     """
     
     def __init__(self, store):
         """
         Purpose to initalize instance of Helper
-        Parameters: (dic) store - where all store data comes from
+        Parameters(dict): store - where all store data comes from
         Returns: none
         Side effects: 
             modifies warehouse, cart, and departments attributes
@@ -281,14 +286,11 @@ class Helper:
         
     def suggestions(self):
         """
-        Purpose is to look at items in the customer's cart and recommend them 
-        items to purchase that are frequently bought together
-        Parameters: (dict) cart - items on cart, along with their corresponding attributes (price, aisle, department, # in stock) 
-        Raises:
-            ValueError: Value error if a suggested item is out of stock
-        Returns:
-            (list) List of suggested items to purchase
-        Side effects: none    
+        Looks at which department appears in their cart the most and recommends
+        other items in the same department that are not in their cart yet
+        Side effects: 
+            prints suggested items depending on what is currently in their cart
+            to the terminal
         """        
         count = []
         for i in self.cart:
@@ -325,13 +327,11 @@ class Helper:
         
     def cart_total(self):
         """
-        Purpose is to add up the cost of all items in a customer's cart and show them
-        Parameters: (dict) cart - items on cart, along with their corresponding attributes (price, aisle, department, # in stock) 
-        Raises:
-            ValueError: if total cost is less than 0
+        Adds up the cost of all items in a customer's cart and shows them
+        Side effects: 
+            prints total cost of a user's cart to the terminal
         Returns:
-            float of the final total cost
-        Side effects: none    
+            float of the final total cost  
             """
         
         total = 0
