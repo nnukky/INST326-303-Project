@@ -15,11 +15,11 @@ class Helper:
     their cart, and checkout 
     Attributes:
         warehouse (dict): Contains the items available in the store and its information
-            - format: {Item ID: (Item Name, Price, Aisle #, Department, # in stock)}
-            - datatypes: {int: tuple(str, float, str, str, int)}
+            - format: {Item ID: [Item Name, Price, Aisle #, Department, # in stock]}
+            - datatypes: {int: list[str, float, str, str, int]}
         cart (dict): dictionary wih a customers cart
-            - format: {Item ID: (Item Name, Price, Aisle #, Department, # in stock)}
-            - datatypes: {int: tuple(str, float, str, str, int)}
+            - format: {Item ID: [Item Name, Price, Aisle #, Department, # in stock]}
+            - datatypes: {int: list[str, float, str, str, int]}
         departments(list): list of departments in the store
             - datatypes: [str, str, str, str, str]
     """
@@ -276,8 +276,9 @@ class Helper:
         Side effects:    
             prints string of item information to stdout
         """
+        print (self.warehouse)
         item = input("What item are you searching for? ")
-        for key in self.warehouse :
+        for key in self.warehouse:
             if item == self.warehouse[key][0] :
                 print(f"{item} is ${self.warehouse[key][1]} and you can find it in {self.warehouse[key][2]} in the {self.warehouse[key][3]} Department. We currently have {self.warehouse[key][4]} in stock.")
             else: 
