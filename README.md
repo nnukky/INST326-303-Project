@@ -13,3 +13,5 @@ To buy an item after knowing its item ID, simply type 'python project.py buy'. N
 -- STORE --
 
 -- FIND --
+
+Annotated Bibliography
