@@ -59,36 +59,36 @@ class Helper:
                 print(f"{num}: {item}")
             selection = int(input("Insert a number: "))
             if selection==1:
-                self.userDepartment={1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8), 
-            2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2),
-            3: ('Samsung 60" TV', 799.99, "Aisle 2", "Electronics", 3), 
-            4: ("iPad Pro", 599.99, "Aisle 1", "Electronics", 2),
-            5: ("Apple Watch", 399.99, "Aisle 1", "Electronics", 1),
-            6: ("Samsung S20", 899.99, "Aisle 2", "Electronics", 6)}
+                self.userDepartment={1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8, 1), 
+            2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2, 2),
+            3: ('Samsung 60" TV', 799.99, "Aisle 2", "Electronics", 3, 3), 
+            4: ("iPad Pro", 599.99, "Aisle 1", "Electronics", 2, 4),
+            5: ("Apple Watch", 399.99, "Aisle 1", "Electronics", 1, 5),
+            6: ("Samsung S20", 899.99, "Aisle 2", "Electronics", 6, 6)}
             elif selection==2:
-                self.userDepartment={7: ("Blue Napkins", 6.99, "Aisle 4", "Paper Products", 10),
-            8: ("White Paper Towels", 4.99, "Aisle 3", "Paper Products", 4),
-            9: ("Birthday Paper Plates", 3.99, "Aisle 4", "Paper Products", 1),
-            10: ("Red Napkins", 6.99, "Aisle 4", "Paper Products", 10),
-            11: ("Brown Paper Bags", 2.99, "Aisle 3", "Paper Products", 5)}
+                self.userDepartment={7: ("Blue Napkins", 6.99, "Aisle 4", "Paper Products", 10, 7),
+            8: ("White Paper Towels", 4.99, "Aisle 3", "Paper Products", 4, 8),
+            9: ("Birthday Paper Plates", 3.99, "Aisle 4", "Paper Products", 1, 9),
+            10: ("Red Napkins", 6.99, "Aisle 4", "Paper Products", 10, 10),
+            11: ("Brown Paper Bags", 2.99, "Aisle 3", "Paper Products", 5, 11)}
             elif selection==3:
-                self.userDepartment={12: ("2% Milk", 2.99, "Aisle 5", "Dairy", 18),
-            13: ("Half & Half", 3.99, "Aisle 5", "Dairy", 6),
-            14: ("Mozzarella Cheese", 2.99, "Aisle 5", "Dairy", 8),
-            15: ("Yoplait Yogurt", 1.99, "Aisle 5", "Dairy", 28),
-            16: ("Ben & Jerry's Ice Cream", 6.99, "Aisle 6", "Dairy", 7)}   
+                self.userDepartment={12: ("2% Milk", 2.99, "Aisle 5", "Dairy", 18, 12),
+            13: ("Half & Half", 3.99, "Aisle 5", "Dairy", 6, 13),
+            14: ("Mozzarella Cheese", 2.99, "Aisle 5", "Dairy", 8, 14),
+            15: ("Yoplait Yogurt", 1.99, "Aisle 5", "Dairy", 28, 15),
+            16: ("Ben & Jerry's Ice Cream", 6.99, "Aisle 6", "Dairy", 7, 16)}   
             elif selection==4:
-                self.userDepartment={17: ("Thomas Bagels", 5.99, "Aisle 7", "Bakery", 10),
-            18: ("Glazed Donuts", 7.99, "Aisle 6", "Bakery", 6),
-            19: ("Birthday Cake", 27.99, "Aisle 6", "Bakery", 1),
-            20: ("French Baguette", 5.99, "Aisle 7", "Bakery", 8),
-            21: ("Sourdough Bread", 4.99, "Aisle 7", "Bakery", 6)}   
+                self.userDepartment={17: ("Thomas Bagels", 5.99, "Aisle 7", "Bakery", 10, 17),
+            18: ("Glazed Donuts", 7.99, "Aisle 6", "Bakery", 6, 18),
+            19: ("Birthday Cake", 27.99, "Aisle 6", "Bakery", 1, 19),
+            20: ("French Baguette", 5.99, "Aisle 7", "Bakery", 8, 20),
+            21: ("Sourdough Bread", 4.99, "Aisle 7", "Bakery", 6, 21)}   
             elif selection==5:
-                self.userDepartment={22: ("Kitchen Chair", 64.99, "Aisle 8", "Furniture", 4),
-            23: ("Couch", 249.99, "Aisle 8", "Furniture", 2),
-            24: ("Dining Table", 129.99, "Aisle 9", "Furniture", 1),
-            25: ("Living Room Chair", 74.99, "Aisle 8", "Furniture", 8),
-            26: ("School Desk", 119.99, "Aisle 9", "Furniture", 2)}              
+                self.userDepartment={22: ("Kitchen Chair", 64.99, "Aisle 8", "Furniture", 4, 22),
+            23: ("Couch", 249.99, "Aisle 8", "Furniture", 2, 23),
+            24: ("Dining Table", 129.99, "Aisle 9", "Furniture", 1, 24),
+            25: ("Living Room Chair", 74.99, "Aisle 8", "Furniture", 8, 25),
+            26: ("School Desk", 119.99, "Aisle 9", "Furniture", 2, 26)}              
             compare = self.departments[selection - 1]
             for key in self.warehouse:
                 if compare == self.warehouse[key][3]:
@@ -119,15 +119,15 @@ class Helper:
             price_range = int(input("Insert a number: "))            
             for item_price in self.userDepartment:
                 if price_range == 1 and self.userDepartment[item_price][1] <5.0:
-                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}\n")
+                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}:ID {self.userDepartment[item_price][5]}\n")
                 elif price_range == 2 and 5.0<=self.userDepartment[item_price][1]<=29.99:
-                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}\n")
+                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}:ID {self.userDepartment[item_price][5]}\n")
                 elif price_range == 3 and 29.99<self.userDepartment[item_price][1]<=99.99:
-                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}\n")
+                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}:ID {self.userDepartment[item_price][5]}\n")
                 elif price_range == 4 and 100.0<self.userDepartment[item_price][1]<=800.0:
-                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}\n")            
+                    print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}:ID {self.userDepartment[item_price][5]}\n")            
                 elif price_range == 5 and self.userDepartment[item_price][1] >800.0:
-                  print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}\n")
+                  print(f"Item:{self.userDepartment[item_price][0]}:${self.userDepartment[item_price][1]}:ID {self.userDepartment[item_price][5]}\n")
         else:
             self.narrow_categories(selection)
           
@@ -147,123 +147,121 @@ class Helper:
             if selection == 1 :
                 brand = input("What brand are you looking for? ")
                 if brand == "Apple" :
-                    print(["iPhone 12", "iPad", "Macbook Pro", "Apple Watch"])
-                elif brand == "Android" :
-                    print(["Android"])
+                    print(["iPhone 12 (ID 1)", "iPad (ID 4)", "Macbook Pro (ID 2)", "Apple Watch (ID 5)"])
                 elif brand == "Samsung" :
-                    print(["Samsung TV"])
+                    print(["Samsung TV (ID 3)"])
                 else :
                     print("We do not have this brand in our inventory.")
                 
                 electronic_type = input("What type of electronic are you looking for? ")
                 if electronic_type == "phone":
-                    print(["iPhone", "Android"])
+                    print(["iPhone (ID 1)", "Android"])
                 elif electronic_type == "TV": 
-                    print(["Samsung TV"])
+                    print(["Samsung TV  (ID 3)"])
                 elif electronic_type == "Tablet" :
-                    print(["iPad"])
+                    print(["iPad (ID 4)"])
                 elif electronic_type == "Watch" :
-                    print(["Apple Watch"])
+                    print(["Apple Watch (ID 5)"])
                 else :
                     print("We do not have this electronic type in our inventory.")
                 
             if selection == 2 :
                 color = input("What color of paper product are you looking for? ")
                 if color == "Blue" :
-                    print(["Blue Napkins"])
+                    print(["Blue Napkins (ID 7)"])
                 elif color == "White" :
-                    print(["White Paper Towels"])
+                    print(["White Paper Towels (ID 8)"])
                 elif color == "Brown" :
-                    print(["Brown Paper Bags"])
+                    print(["Brown Paper Bags (ID 11)"])
                 elif color == "Red" :
-                    print(["Red Napkins"])
+                    print(["Red Napkins (ID 10)"])
                 elif color == "Multicolor" :
-                    print(["Birthday Paper Plates"])
+                    print(["Birthday Paper Plates (ID 9)"])
                 else :
                     print("We do not have this color in our inventory.")
                 
                 paper_product_type = input("What type of paper product are you looking for? ")
                 if paper_product_type == "Napkins" :
-                    print(["Blue Napkins", "Red Napkins"])
+                    print(["Blue Napkins (ID 7)", "Red Napkins (ID 10)"])
                 elif paper_product_type == "Paper Towels":
-                    print(["White Paper Towels"])
+                    print(["White Paper Towels (ID 8)"])
                 elif paper_product_type == "Paper Bags" :
-                    print(["Brown Paper Bags"])
+                    print(["Brown Paper Bags (ID 11)"])
                 elif paper_product_type == "Plates" :
-                    print(["Birthday Paper Plates"])
+                    print(["Birthday Paper Plates (ID 9)"])
                 else :
                     print("We do not have this paper product type in our inventory.")
                 
                 occasion = input("What type of occasion are you shopping for? ")
                 if occasion == "Birthday" :
-                    print(["Birthday Paper Plates"])
+                    print(["Birthday Paper Plates (ID 9)"])
                 else :
                     print("We do not have this occasion in our inventory.")
                 
             if selection == 3 :
                 dairy_type = input("What type of dairy are you looking for? ")
                 if dairy_type == "Milk" :
-                    print(["2% Milk", "Half and Half"])
+                    print(["2% Milk (ID 12)", "Half and Half (ID 13)"])
                 elif dairy_type == "Cheese" :
-                    print(["Mozzarella Cheese"])
+                    print(["Mozzarella Cheese (ID 14)"])
                 elif dairy_type == "Yogurt" :
-                    print(["Yoplait Yogurt"])
+                    print(["Yoplait Yogurt (ID 15)"])
                 elif dairy_type == "Ice Cream" :
-                    print(["Ben and Jerry's Ice Cream"])
+                    print(["Ben and Jerry's Ice Cream (ID 16)"])
                 else :
                     print("We do not have this dairy type in our inventory.")
                 
                 dairy_brand = input("What brand of dairy are you looking for? ")
                 if dairy_brand == "Yoplait" :
-                    print(["Yoplait Yogurt"])
+                    print(["Yoplait Yogurt (ID 15)"])
                 elif dairy_brand == "Ben and Jerry's" :
-                    print(["Ben and Jerry's Ice Cream"])
+                    print(["Ben and Jerry's Ice Cream (ID 16)"])
                 else :
                     print("We do not have this brand in our inventory.")
                 
             if selection == 4 :
                 bakery_type = input("What type of baked good are you looking for? ")
                 if bakery_type == "Bagels" :
-                    print(["Thomas Bagels"])
+                    print(["Thomas Bagels (ID 17)"])
                 elif bakery_type == "Donuts" :
-                    print(["Glazed Donuts"])
+                    print(["Glazed Donuts (ID 18)"])
                 elif bakery_type == "Cake" :
-                    print(["Birthday Cake"])
+                    print(["Birthday Cake (ID 19)"])
                 elif bakery_type == "Bread" :
-                    print(["French Baguette", "Sourdough Bread"])
+                    print(["French Baguette (ID 20)", "Sourdough Bread (ID 21)"])
                 else :
                     print("We do not have this type of baked good in our inventory.")
             
                 bakery_brand = input("What brand of baked good are you looking for? ")
                 if bakery_brand == "Thomas" :
-                    print(["Thomas Bagels"])
+                    print(["Thomas Bagels (ID 17)"])
                 else :
                     print("We do not have this brand in our inventory.")
             
                 bakery_occasion = input("What occasion are you shopping for? ")
                 if bakery_occasion == "Birthday" :
-                    print(["Birthday Cake"])
+                    print(["Birthday Cake (ID 19)"])
                 else :
                     print("We do not have this occasion in our inventory.")
                 
             if selection == 5 :
                 furniture_type = input("What furniture type are you looking for? ")
                 if furniture_type == "Chair" :
-                    print(["Kitchen Chair", "Living Room Chair"])
+                    print(["Kitchen Chair (ID 22)", "Living Room Chair (ID 25)"])
                 elif furniture_type == "Couch" :
-                    print(["Couch"])
+                    print(["Couch (ID 23)"])
                 elif furniture_type == "Table" :
-                    print(["Dining Table", "School Desk"])
+                    print(["Dining Table (ID 24)", "School Desk (ID 26)"])
                 else :
                     print("We do not have this furniture type in our inventory.")
             
                 room = input("What room are you shopping for furniture for? ")
                 if room == "Kitchen" :
-                    print(["Kitchen Chair"])
+                    print(["Kitchen Chair (ID 22)"])
                 elif room == "Dining Room" :
-                    print(["Dining Table"])
+                    print(["Dining Table (ID 24)"])
                 elif room == "Living Room" :
-                    print(["Living Room Chair"])
+                    print(["Living Room Chair (ID 25)"])
                 else :
                     print("We do not have this room in our inventory.")
                                     
@@ -279,7 +277,7 @@ class Helper:
         item = input("What item are you searching for? ")
         for key in self.warehouse:
             if item == self.warehouse[key][0] :
-                print(f"{item} is ${self.warehouse[key][1]} and you can find it in {self.warehouse[key][2]} in the {self.warehouse[key][3]} Department. We currently have {self.warehouse[key][4]} in stock.")
+                print(f"{item} is ${self.warehouse[key][1]} with ID {self.warehouse[key][5]}and you can find it in {self.warehouse[key][2]} in the {self.warehouse[key][3]} Department. We currently have {self.warehouse[key][4]} in stock.")
             else: 
                 raise ValueError("This item does not exist in the store.")
         
@@ -321,7 +319,7 @@ class Helper:
         """              
         print("Your cart currently has...")
         for item in self.cart:
-            print (f"item: {self.cart[item][0]}, price: ${self.cart[item][1]}") 
+            print (f"item: {self.cart[item][0]}, price: ${self.cart[item][1]}, ID:{self.cart[item][5]}") 
         return self.cart               
         
     def cart_total(self):
@@ -358,32 +356,32 @@ def create_store():
     Returns:  dictionary with warehouse items
     Side effects: none
     """    
-    return {1: ("iPhone 12 (item id 1)", 999.99, "Aisle 1", "Electronics", 8), 
-            2: ("Macbook Pro (item id 2)", 1299.29, "Aisle 1", "Electronics", 2),
-            3: ('Samsung 60 (item id 3)" TV', 799.99, "Aisle 2", "Electronics", 3), 
-            4: ("iPad Pro (item id 4)", 599.99, "Aisle 1", "Electronics", 2),
-            5: ("Apple Watch (item id 5)", 399.99, "Aisle 1", "Electronics", 1),
-            6: ("Samsung S20 (item id 6)", 899.99, "Aisle 2", "Electronics", 6),
-            7: ("Blue Napkins (item id 7)", 6.99, "Aisle 4", "Paper Products", 10),
-            8: ("White Paper Towels (item id 8)", 4.99, "Aisle 3", "Paper Products", 4),
-            9: ("Birthday Paper Plates (item id 9)", 3.99, "Aisle 4", "Paper Products", 1),
-            10: ("Red Napkins (item id 10)", 6.99, "Aisle 4", "Paper Products", 10),
-            11: ("Brown Paper Bags (item id 11)", 2.99, "Aisle 3", "Paper Products", 5),
-            12: ("2% Milk (item id 12)", 2.99, "Aisle 5", "Dairy", 18),
-            13: ("Half & Half (item id 13)", 3.99, "Aisle 5", "Dairy", 6),
-            14: ("Mozzarella Cheese (item id 14)", 2.99, "Aisle 5", "Dairy", 8),
-            15: ("Yoplait Yogurt (item id 15)", 1.99, "Aisle 5", "Dairy", 28),
-            16: ("Ben & Jerry's Ice Cream (item id 16)", 6.99, "Aisle 6", "Dairy", 7),
-            17: ("Thomas Bagels (item id 17)", 5.99, "Aisle 7", "Bakery", 10),
-            18: ("Glazed Donuts (item id 18)", 7.99, "Aisle 6", "Bakery", 6),
-            19: ("Birthday Cake (item id 19)", 27.99, "Aisle 6", "Bakery", 1),
-            20: ("French Baguette (item id 20)", 5.99, "Aisle 7", "Bakery", 8),
-            21: ("Sourdough Bread (item id 21)", 4.99, "Aisle 7", "Bakery", 6),
-            22: ("Kitchen Chair (item id 22)", 64.99, "Aisle 8", "Furniture", 4),
-            23: ("Couch (item id 23)", 249.99, "Aisle 8", "Furniture", 2),
-            24: ("Dining Table (item id 24)", 129.99, "Aisle 9", "Furniture", 1),
-            25: ("Living Room Chair (item id 25)", 74.99, "Aisle 8", "Furniture", 8),
-            26: ("School Desk (item id 26)", 119.99, "Aisle 9", "Furniture", 2)}         
+    return {1: ("iPhone 12", 999.99, "Aisle 1", "Electronics", 8, 1), 
+            2: ("Macbook Pro", 1299.29, "Aisle 1", "Electronics", 2, 2),
+            3: ('Samsung 60" TV', 799.99, "Aisle 2", "Electronics", 3, 3), 
+            4: ("iPad Pro", 599.99, "Aisle 1", "Electronics", 2, 4),
+            5: ("Apple Watch", 399.99, "Aisle 1", "Electronics", 1, 5),
+            6: ("Samsung S20", 899.99, "Aisle 2", "Electronics", 6, 6),
+            7: ("Blue Napkins", 6.99, "Aisle 4", "Paper Products", 10, 7),
+            8: ("White Paper Towels", 4.99, "Aisle 3", "Paper Products", 4, 8),
+            9: ("Birthday Paper Plates", 3.99, "Aisle 4", "Paper Products", 1, 9),
+            10: ("Red Napkins", 6.99, "Aisle 4", "Paper Products", 10, 10),
+            11: ("Brown Paper Bags", 2.99, "Aisle 3", "Paper Products", 5, 11),
+            12: ("2% Milk", 2.99, "Aisle 5", "Dairy", 18, 12),
+            13: ("Half & Half", 3.99, "Aisle 5", "Dairy", 6, 13),
+            14: ("Mozzarella Cheese", 2.99, "Aisle 5", "Dairy", 8, 14),
+            15: ("Yoplait Yogurt", 1.99, "Aisle 5", "Dairy", 28, 15),
+            16: ("Ben & Jerry's Ice Cream", 6.99, "Aisle 6", "Dairy", 7, 16),
+            17: ("Thomas Bagels", 5.99, "Aisle 7", "Bakery", 10, 17),
+            18: ("Glazed Donuts", 7.99, "Aisle 6", "Bakery", 6, 18),
+            19: ("Birthday Cake", 27.99, "Aisle 6", "Bakery", 1, 19),
+            20: ("French Baguette", 5.99, "Aisle 7", "Bakery", 8, 20),
+            21: ("Sourdough Bread", 4.99, "Aisle 7", "Bakery", 6, 21),
+            22: ("Kitchen Chair", 64.99, "Aisle 8", "Furniture", 4, 22),
+            23: ("Couch", 249.99, "Aisle 8", "Furniture", 2, 23),
+            24: ("Dining Table", 129.99, "Aisle 9", "Furniture", 1, 24),
+            25: ("Living Room Chair", 74.99, "Aisle 8", "Furniture", 8, 25),
+            26: ("School Desk", 119.99, "Aisle 9", "Furniture", 2, 26)}         
 
 def find_location(store):
     """
