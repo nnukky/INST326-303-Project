@@ -13,7 +13,7 @@ class Helper:
     Allows the user to filter through the store, add items to 
     their cart, and checkout 
     Attributes:
-        warehouse (dict): Contains the items available in the store and it's information
+        warehouse (dict): Contains the items available in the store and its information
             - format: {Item ID: (Item Name, Price, Aisle #, Department, # in stock)}
             - datatypes: {int: tuple(str, float, str, str, int)}
         cart (dict): dictionary wih a customers cart
@@ -316,7 +316,7 @@ class Helper:
         Purpose is to get a summary of what is currently in a user's cart and display to user
         Parameters: none
         Returns: (dict) self.cart
-        Side effects: prints to console        
+        Side effects: prints to console a message consisting of all items and prices currently in user's cart        
         """              
         print("Your cart currently has...")
         for item in self.cart:
@@ -344,7 +344,7 @@ class Helper:
         Purpose is to add item to cart
         Parameters: (int) itemNum - number for identifying item
         Returns: (dict) self.cart
-        Side effects: changes self.cart
+        Side effects: updates self.cart
         """
         self.cart[int(itemNum)]=self.warehouse[int(itemNum)]  
         return self.cart[int(itemNum)]     
