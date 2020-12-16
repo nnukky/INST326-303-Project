@@ -137,9 +137,8 @@ class Helper:
         Purpose to prompt the user with questions to help narrow down options even further
         Args: 
             selection(int): category number they are searching in
-        Returns:
-            (list): list of possible items to browse determined by their answer to the questions
-        Side effects: none
+        Side effects: 
+            prints list of possible items to browse determined by their answer to the questions to stdout
         """        
         narrow = input("Would you like to narrow down the category you are searching in? (yes/no) ")
         if narrow == "no" :
@@ -272,10 +271,9 @@ class Helper:
         """
         Purpose to ask the user what item they are searching for and shows the user the information of the item they chose
         Raises:
-            ValueError: raised if an item doesn't exist in the store
-        Returns:
-            str of item information
-        Side effects: none    
+            ValueError: raised if an item doesn't exist in the store    
+        Side effects:    
+            prints string of item information to stdout
         """
         item = input("What item are you searching for? ")
         for key in self.warehouse :
