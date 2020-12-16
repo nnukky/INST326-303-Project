@@ -7,6 +7,7 @@ products and view other features associated with them.
 from argparse import ArgumentParser
 import sys
 from collections import Counter
+import pandas as pd
 
 class Helper:
     """
@@ -351,38 +352,14 @@ class Helper:
         
 def create_store():
     """
-    Purpose is to create the warehouse with items and their information in a dictionary
+    Purpose is to read in a CSV file and create the warehouse with items and their information in a dictionary
     This is where all data comes from!
     Parameters: none
     Returns:  dictionary with warehouse items
     Side effects: none
     """    
-    return {1: ("iPhone 12 (item id 1)", 999.99, "Aisle 1", "Electronics", 8), 
-            2: ("Macbook Pro (item id 2)", 1299.29, "Aisle 1", "Electronics", 2),
-            3: ('Samsung 60 (item id 3)" TV', 799.99, "Aisle 2", "Electronics", 3), 
-            4: ("iPad Pro (item id 4)", 599.99, "Aisle 1", "Electronics", 2),
-            5: ("Apple Watch (item id 5)", 399.99, "Aisle 1", "Electronics", 1),
-            6: ("Samsung S20 (item id 6)", 899.99, "Aisle 2", "Electronics", 6),
-            7: ("Blue Napkins (item id 7)", 6.99, "Aisle 4", "Paper Products", 10),
-            8: ("White Paper Towels (item id 8)", 4.99, "Aisle 3", "Paper Products", 4),
-            9: ("Birthday Paper Plates (item id 9)", 3.99, "Aisle 4", "Paper Products", 1),
-            10: ("Red Napkins (item id 10)", 6.99, "Aisle 4", "Paper Products", 10),
-            11: ("Brown Paper Bags (item id 11)", 2.99, "Aisle 3", "Paper Products", 5),
-            12: ("2% Milk (item id 12)", 2.99, "Aisle 5", "Dairy", 18),
-            13: ("Half & Half (item id 13)", 3.99, "Aisle 5", "Dairy", 6),
-            14: ("Mozzarella Cheese (item id 14)", 2.99, "Aisle 5", "Dairy", 8),
-            15: ("Yoplait Yogurt (item id 15)", 1.99, "Aisle 5", "Dairy", 28),
-            16: ("Ben & Jerry's Ice Cream (item id 16)", 6.99, "Aisle 6", "Dairy", 7),
-            17: ("Thomas Bagels (item id 17)", 5.99, "Aisle 7", "Bakery", 10),
-            18: ("Glazed Donuts (item id 18)", 7.99, "Aisle 6", "Bakery", 6),
-            19: ("Birthday Cake (item id 19)", 27.99, "Aisle 6", "Bakery", 1),
-            20: ("French Baguette (item id 20)", 5.99, "Aisle 7", "Bakery", 8),
-            21: ("Sourdough Bread (item id 21)", 4.99, "Aisle 7", "Bakery", 6),
-            22: ("Kitchen Chair (item id 22)", 64.99, "Aisle 8", "Furniture", 4),
-            23: ("Couch (item id 23)", 249.99, "Aisle 8", "Furniture", 2),
-            24: ("Dining Table (item id 24)", 129.99, "Aisle 9", "Furniture", 1),
-            25: ("Living Room Chair (item id 25)", 74.99, "Aisle 8", "Furniture", 8),
-            26: ("School Desk (item id 26)", 119.99, "Aisle 9", "Furniture", 2)}         
+    df = pd.read_csv("data.csv")   
+    return df.set_index('ID').T.to_dict('list')   
 
 def find_location(store):
     """
