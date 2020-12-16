@@ -15,3 +15,7 @@ To buy an item after knowing its item ID, simply type 'python project.py buy'. N
 -- FIND --
 
 Annotated Bibliography
+
+Lynn, S. (2019, February 13). Python Pandas read_csv – Load Data from CSV Files. Retrieved December 16, 2020, from https://www.shanelynn.ie/python-pandas-read_csv-load-data-from-csv-files/ This source was used to help us convert a CSV file into a dataframe using Pandas. This was used in create_store
+
+Riley, A. (1963, December 01). Convert a Pandas DataFrame to a dictionary. Retrieved December 16, 2020, from https://stackoverflow.com/questions/26716616/convert-a-pandas-dataframe-to-a-dictionary This source was used to help us convert a dataframe into a dictionary. This was used in create_store.
