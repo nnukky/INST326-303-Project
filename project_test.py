@@ -1,6 +1,8 @@
 #Pytest script for project.py
 
 import project as p
+from unittest import mock
+import builtins
 
 def test_categories_search():
     test = p.Helper(p.create_store())
@@ -26,11 +28,20 @@ def test_cart_total():
     
 def test_narrow_categories() :
     test = p.Helper(p.create_store())
-    if narrow == "yes"  :
-        assert test.narrow_categories(1) == brand
+    while test.narrow_categories(1) == True :
+        with mock.patch("builtins.input",
+                side_effect = ["yes", "Apple", "phone"]):
+            s = test.narrow_categories(selection)
+            x = ["iPhone 12", "iPad", "Macbook Pro", "Apple Watch"]
+            y = ["iPhone", "Android"]
+            assert s == x, y
+            captured = capsys.readouterr()
+            assert captured.out == ""
     
 def test_item_attributes() :
     test = p.Helper(p.create_store())
+    with mock.patch("builtins.input",
+                    side_effect = "")
     
 def test_add_to_cart():
     test = p.Helper(p.create_store())
