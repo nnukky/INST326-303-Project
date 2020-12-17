@@ -279,8 +279,8 @@ class Helper:
             if item in self.warehouse[key][0] :
                 print(f"{item} is ${self.warehouse[key][1]} with ID {self.warehouse[key][5]} and you can find it in {self.warehouse[key][2]} in the {self.warehouse[key][3]} Department. We currently have {self.warehouse[key][4]} in stock.")
                 break
-            else: 
-                raise ValueError("This item does not exist in the store.")
+        else: 
+            raise ValueError("This item does not exist in the store.")
         
     def suggestions(self):
         """
