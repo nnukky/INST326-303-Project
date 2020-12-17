@@ -53,32 +53,32 @@ def test_narrow_categories() :
                 "We do not have this electronic type in our inventory."
             )
     
-#def test_item_attributes() :
-    #test = p.Helper(p.create_store())
+def test_item_attributes() :
+    test = p.Helper(p.create_store())
     # happy path
-    #with mock.patch("builtins.input", 
-        #side_effect = "iPhone 12") :
-    # s = test.item_attributes()
-    # assert s = "iPhone 12 is $ and you can find it in AISLE in the DEPT Department. We currently have NUMBER in stock."
-    # captured capsys.readouterr()
-    # assert captured.out == ""
+    with mock.patch("builtins.input", 
+            side_effect = "iPhone 12") :
+        s = test.item_attributes()
+        assert s == "iPhone 12 is $999.99 with ID 1 and you can find it in Aisle 1 in the Electronics Department. We currently have 8 in stock."
+        captured = capsys.readouterr()
+        assert captured.out == ""
     # invalid input
-    #with mock.patch("builtins.input", 
-        #side_effect = "iPhone 12") :
-    # s = test.item_attributes()
-    # assert s = Cheese Balls
-    #captured = capsys.readouterr()
-            #assert captured.out == (
-                #"This item does not exist in the store."
-            #)           
+    with mock.patch("builtins.input", 
+        side_effect = "Cheese Balls") :
+        s = test.item_attributes()
+        assert s == ""
+        captured = capsys.readouterr()
+        assert captured.out == (
+            "This item does not exist in the store."
+        )           
     
 def test_add_to_cart():
     test = p.Helper(p.create_store())
-    assert test.add_to_cart(1)==("iPhone 12 (item id 1)", 999.99, "Aisle 1", "Electronics", 8)
-    assert test.add_to_cart(8)==("White Paper Towels (item id 8)", 4.99, "Aisle 3", "Paper Products", 4)
-    assert test.add_to_cart(13)==("Half & Half (item id 13)", 3.99, "Aisle 5", "Dairy", 6)
-    assert test.add_to_cart(21)==("Sourdough Bread (item id 21)", 4.99, "Aisle 7", "Bakery", 6)
-    assert test.add_to_cart(26)==("School Desk (item id 26)", 119.99, "Aisle 9", "Furniture", 2)
+    assert test.add_to_cart(1)==("iPhone 12", 999.99, "Aisle 1", "Electronics", 8, 1)
+    assert test.add_to_cart(8)==("White Paper Towels", 4.99, "Aisle 3", "Paper Products", 4, 8)
+    assert test.add_to_cart(13)==("Half & Half", 3.99, "Aisle 5", "Dairy", 6, 13)
+    assert test.add_to_cart(21)==("Sourdough Bread", 4.99, "Aisle 7", "Bakery", 6, 21)
+    assert test.add_to_cart(26)==("School Desk", 119.99, "Aisle 9", "Furniture", 2, 26)
     
 def test_check_cart():
     test=p.Helper(p.create_store())   
@@ -87,10 +87,10 @@ def test_check_cart():
     test.add_to_cart(13)
     test.add_to_cart(21)
     test.add_to_cart(26)
-    assert test.check_cart()=={1:("iPhone 12 (item id 1)", 999.99, "Aisle 1", "Electronics", 8), 
-                                8: ("White Paper Towels (item id 8)", 4.99, "Aisle 3", "Paper Products", 4),
-                                13: ("Half & Half (item id 13)", 3.99, "Aisle 5", "Dairy", 6),
-                                21: ("Sourdough Bread (item id 21)", 4.99, "Aisle 7", "Bakery", 6),
-                                26: ("School Desk (item id 26)", 119.99, "Aisle 9", "Furniture", 2)}     
+    assert test.check_cart()=={1:("iPhone 12", 999.99, "Aisle 1", "Electronics", 8, 1), 
+                                8: ("White Paper Towels", 4.99, "Aisle 3", "Paper Products", 4, 8),
+                                13: ("Half & Half", 3.99, "Aisle 5", "Dairy", 6, 13),
+                                21: ("Sourdough Bread", 4.99, "Aisle 7", "Bakery", 6, 21),
+                                26: ("School Desk", 119.99, "Aisle 9", "Furniture", 2, 26)}     
         
     
