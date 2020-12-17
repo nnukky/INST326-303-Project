@@ -94,7 +94,7 @@ class Helper:
             for key in self.warehouse:
                 if compare == self.warehouse[key][3]:
                     nl = '\n'
-                    print(f"Item:{self.warehouse[key][0]}{nl}") 
+                    print(f"Item:{self.warehouse[key][0]} (ID: {self.warehouse[key][5]}){nl}") 
             self.price_search(selection)        
     
     def price_search(self, selection):
