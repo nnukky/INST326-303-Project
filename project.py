@@ -271,7 +271,6 @@ class Helper:
         Side effects:    
             prints string of item information to stdout
         """
-        print (self.warehouse)
         item = input("What item are you searching for? ")
         for key in self.warehouse:
             if item in self.warehouse[key][0] :
