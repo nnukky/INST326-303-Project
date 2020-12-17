@@ -14,11 +14,11 @@ class Helper:
     their cart, and checkout 
     Attributes:
         warehouse (dict): Contains the items available in the store and its information
-            - format: {Item ID: [Item Name, Price, Aisle #, Department, # in stock]}
-            - datatypes: {int: list[str, float, str, str, int]}
+            - format: {Item ID: [Item Name, Price, Aisle #, Department, # in stock, item id]}
+            - datatypes: {int: list[str, float, str, str, int, int]}
         cart (dict): dictionary wih a customers cart
-            - format: {Item ID: [Item Name, Price, Aisle #, Department, # in stock]}
-            - datatypes: {int: list[str, float, str, str, int]}
+            - format: {Item ID: [Item Name, Price, Aisle #, Department, # in stock, item id]}
+            - datatypes: {int: list[str, float, str, str, int, int]}
         departments(list): list of departments in the store
             - datatypes: [str, str, str, str, str]
     """
@@ -295,20 +295,22 @@ class Helper:
         x = Counter(count)
         maxdep = max(count, key=x.get)
 
-        all_items = [self.warehouse[item][0] for item in self.warehouse
-                        if maxdep == self.warehouse[item][3]]
-        all_items = set(all_items)
-
-        cart_items = [self.cart[c][0] for c in self.cart 
-                        if maxdep == self.cart[c][3]]
-        cart_items = set(cart_items)
-
-        suggestions = all_items.difference(cart_items)
-
+        all_items = {}
+        for i in self.warehouse:
+            if maxdep == self.warehouse[i][3]:
+                all_items[self.warehouse[i][5]] = self.warehouse[i][0]
+        
+        cart_items = {}
+        for it in self.cart:
+            if maxdep == self.cart[it][3]:
+                cart_items[self.cart[it][5]] = self.cart[it][0]
+        
+        suggestions = {k: all_items[k] for k in set(all_items) - set(cart_items)}
+        
         if len(suggestions) > 0:
             print("\nSUGGESTED ITEMS:")
             for s in suggestions:
-                print(f"{s}")
+                print(f"{suggestions[s]} (ID: {s})")
         
     def check_cart(self):
         """
@@ -404,10 +406,10 @@ def find_location(store):
     finder = {}
     for key in store:
         if compare == store[key][3]:
-            finder[store[key][0]] = store[key][2]
+            finder[key] = (store[key][0], store[key][2])
     print("\n")        
     for k in finder:
-        print(f"Check {finder[k].lower()} for {k}")
+        print(f"Check {finder[k][1].lower()} for {finder[k][0]} (ID: {k})")
 
 def parse_args(arglist):
     """ 
