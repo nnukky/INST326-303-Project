@@ -101,8 +101,6 @@ class Helper:
         Purpose to allow customer to search by price of items of chosen category
         Parameters:
             selection(int): category number they are searching in
-        Raises:
-            ValueError: Value error is price is entered correctly
         Returns:
             items at given price within chose category OR
             proceeds onto narrow_categories    
