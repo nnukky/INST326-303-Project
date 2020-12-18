@@ -13,11 +13,8 @@ def test_categories_search(capsys):
             assert test.categories_search(1) ==("iPhone 12", 999.99, "Aisle 1", "Electronics", 8)
         if specific_search == "no" and selection==5:
             assert test.categories_search(25) ==("Living Room Chair", 74.99, "Aisle 8", "Furniture", 8)
-
-#def test_price_search():
-    #test = p.Helper(p.create_store())
-    #if price == "yes":
-        #assert test.price_search(1) == "Item:2% Milk:$2.99"
+    elif captured.out == "yes":
+        test.item_attributes()
 
 
 def test_cart_total():
