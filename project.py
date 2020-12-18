@@ -45,6 +45,8 @@ class Helper:
         Returns:
             returns a list of products from each category OR
             returns specific item detail of that option is selected
+        Raises:
+            IndexError: Raises IndexError if number selected it out of range of list
         Side Effects:
             prints different department selections
             prints each of the 6 items in chosen department   
