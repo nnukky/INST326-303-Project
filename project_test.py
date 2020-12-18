@@ -29,7 +29,7 @@ def test_cart_total():
     
     assert test.cart_total() == 1299.29 + 249.99 + 119.99 + 27.99
     
-def test_narrow_categories() :
+def test_narrow_categories(capsys) :
     test = p.Helper(p.create_store())
     # happy path
     while test.narrow_categories(1) == True :
