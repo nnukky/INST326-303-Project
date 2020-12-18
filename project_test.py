@@ -30,28 +30,24 @@ def test_cart_total():
     assert test.cart_total() == 1299.29 + 249.99 + 119.99 + 27.99
     
 def test_narrow_categories(capsys) :
+    captured = capsys.readouterr()
     test = p.Helper(p.create_store())
+    if captured.out == "yes":
     # happy path
-    while test.narrow_categories(1) == True :
-        with mock.patch("builtins.input",
-                side_effect = ["yes", "Apple", "phone"]):
-            s = test.narrow_categories(selection)
-            x = ["iPhone 12", "iPad", "Macbook Pro", "Apple Watch"]
-            y = ["iPhone", "Android"]
-            assert s == x, y
-            captured = capsys.readouterr()
-            assert captured.out == ""
+        while test.narrow_categories(1) == True :
+            with mock.patch("builtins.input",
+                    side_effect = ["Apple", "phone"]):
+                s = test.narrow_categories(selection)
+                x = ["iPhone 12", "iPad", "Macbook Pro", "Apple Watch"]
+                y = ["iPhone", "Android"]
+                assert s == x, y
     # invalid inputs
-    while test.narrow_categories(1) == True :
-        with mock.patch("builtins.input",
-                side_effect = ["yes", "T-Mobile", "laptop"]):
-            s = test.narrow_categories(selection)
-            assert s == ""
-            captured = capsys.readouterr()
-            assert captured.out == (
-                "We do not have this brand in our inventory."
-                "We do not have this electronic type in our inventory."
-            )
+            with mock.patch("builtins.input",
+                    side_effect = ["T-Mobile", "laptop"]):
+                s = test.narrow_categories(selection)
+                x = "We do not have this brand in our inventory."
+                y = "We do not have this electronic type in our inventory."
+                assert s == x, y
     
 def test_item_attributes(capsys) :
     captured = capsys.readouterr()
