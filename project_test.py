@@ -8,10 +8,10 @@ import builtins
 def test_categories_search(capsys):
     captured = capsys.readouterr()
     test = p.Helper(p.create_store())
-    if captured.out == "yes":
-        if specific_search == "yes" and selection==1:
+    if captured.out == "no":
+        if specific_search == "no" and selection==1:
             assert test.categories_search(1) ==("iPhone 12", 999.99, "Aisle 1", "Electronics", 8)
-        if specific_search == "yes" and selection==5:
+        if specific_search == "no" and selection==5:
             assert test.categories_search(25) ==("Living Room Chair", 74.99, "Aisle 8", "Furniture", 8)
 
 #def test_price_search():
@@ -53,24 +53,18 @@ def test_narrow_categories() :
                 "We do not have this electronic type in our inventory."
             )
     
-def test_item_attributes() :
+def test_item_attributes(capsys) :
+    captured = capsys.readouterr()
     test = p.Helper(p.create_store())
     # happy path
-    with mock.patch("builtins.input", 
-            side_effect = "iPhone 12") :
-        s = test.item_attributes()
-        assert s == "iPhone 12 is $999.99 with ID 1 and you can find it in Aisle 1 in the Electronics Department. We currently have 8 in stock."
-        captured = capsys.readouterr()
-        assert captured.out == ""
+    if captured.out == "iPhone 12":
+        if item == "iPhone 12" :
+            assert test.item_attributes() ==("iPhone 12 is $999.99 with ID 1 and you can find it in Aisle 1 in the Electronics Department. We currently have 8 in stock.")
     # invalid input
-    with mock.patch("builtins.input", 
-        side_effect = "Cheese Balls") :
-        s = test.item_attributes()
-        assert s == ""
-        captured = capsys.readouterr()
-        assert captured.out == (
-            "This item does not exist in the store."
-        )           
+    if captured.out == "Cheese Balls":
+        if item == "Cheese Balls" :
+            assert test.item_attributes() ==("This item does not exist in the store.")
+             
     
 def test_add_to_cart():
     test = p.Helper(p.create_store())
