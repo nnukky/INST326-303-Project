@@ -21,13 +21,21 @@ def test_categories_search(capsys):
 
 
 def test_cart_total():
+    #Case 1
     test = p.Helper(p.create_store())
     test.add_to_cart(2)
     test.add_to_cart(23)
     test.add_to_cart(26)
     test.add_to_cart(19)    
+    assert test.cart_total() == round(1299.29 + 249.99 + 119.99 + 27.99, 2)
     
-    assert test.cart_total() == 1299.29 + 249.99 + 119.99 + 27.99
+    #Case 2
+    test2 = p.Helper(p.create_store())
+    test2.add_to_cart(25)
+    test2.add_to_cart(17)
+    test2.add_to_cart(5)
+    test2.add_to_cart(15)    
+    assert test2.cart_total() == round(74.99 + 5.99 + 399.99 + 1.99, 2)
     
 def test_narrow_categories(capsys) :
     captured = capsys.readouterr()
