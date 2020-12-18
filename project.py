@@ -154,7 +154,7 @@ class Helper:
                 
                 electronic_type = input("What type of electronic are you looking for? ")
                 if electronic_type == "phone":
-                    print(["iPhone (ID 1)", "Android"])
+                    print(["iPhone (ID 1)"])
                 elif electronic_type == "TV": 
                     print(["Samsung TV  (ID 3)"])
                 elif electronic_type == "Tablet" :
