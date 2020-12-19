@@ -307,7 +307,7 @@ class Helper:
             if maxdep == self.cart[it][3]:
                 cart_items[self.cart[it][5]] = self.cart[it][0]
         
-        suggestions = {k: all_items[k] for k in set(all_items) - set(cart_items)}
+        suggestions = {ii: all_items[ii] for ii in set(all_items) - set(cart_items)}
         
         if len(suggestions) > 0:
             print("\nSUGGESTED ITEMS:")
