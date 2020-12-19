@@ -16,7 +16,7 @@ data.csv - data used to create our store
 -- BUY -- 
 To buy an item after knowing its item ID, simply type 'python project.py buy'. Next, enter the item ID you would like to purchase. After entering an item ID, you will be shown what is in your cart along with the total price, as well as a list of suggested items. You may continue to buy items until you do not wish to buy anymore.
 -- STORE --
-To search for specific items, type 'python project.py store'. Next, you can either search an item directly by name, or search inside a department. If you choose a department, you can narrow your search results even further by price range. If you choose not to narrow your search results by price, you are asked if you would like to narrow down your product using other methods. If you choose to do so, you are prompted with questions such as brand and type of product.
+To search for specific items, type 'python project.py store'. Next, you can either search an item directly by name, or search inside a department. If you choose a department, you can narrow your search results even further by price range. If you choose not to narrow your search results by price, you are asked if you would like to narrow down your product using other methods. If you choose to do so, you are prompted with questions such as brand and type of product. If you choose not to narrow your search by category, you will be asked to input which specific item you are looking for.
 -- FIND --
 To find the general item list based on department, type 'python project.py find'. Next, enter the number of the department you are looking for in the list that pops up. You will then be shown a list of the aisles where you can find the items in your chosen department.
 
