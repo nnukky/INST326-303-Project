@@ -38,15 +38,24 @@ def test_narrow_categories(capsys) :
     captured = capsys.readouterr()
     test = p.Helper(p.create_store())
     if captured.out == "yes":
-    # happy path
+    # happy path case 1
         while test.narrow_categories(1) == True :
             with mock.patch("builtins.input",
                     side_effect = ["Apple", "phone"]):
                 s = test.narrow_categories(selection)
-                x = ["iPhone 12", "iPad", "Macbook Pro", "Apple Watch"]
-                y = ["iPhone", "Android"]
+                x = ["iPhone 12 (ID 1)", "iPad (ID 4)", "Macbook Pro (ID 2)", "Apple Watch (ID 5)"]
+                y = ["iPhone (ID 1)"]
+                assert s == x, y
+    # happy path case 2
+        while test.narrow_categories(5) == True :    
+            with mock.patch("builtins.input",
+                    side_effect = ["Chair", "Kitchen"]):
+                s = test.narrow_categories(selection)
+                x = ["Kitchen Chair (ID 22)", "Living Room Chair (ID 25)"]
+                y = ["Kitchen Chair (ID 22)"]
                 assert s == x, y
     # invalid inputs
+        while test.narrow_categories(1) == True :    
             with mock.patch("builtins.input",
                     side_effect = ["T-Mobile", "laptop"]):
                 s = test.narrow_categories(selection)
@@ -57,10 +66,14 @@ def test_narrow_categories(capsys) :
 def test_item_attributes(capsys) :
     captured = capsys.readouterr()
     test = p.Helper(p.create_store())
-    # happy path
+    # happy path case 1
     if captured.out == "iPhone 12":
         if item == "iPhone 12" :
-            assert test.item_attributes() ==("iPhone 12 is $999.99 with ID 1 and you can find it in Aisle 1 in the Electronics Department. We currently have 8 in stock.")
+            assert test.item_attributes() == ("iPhone 12 is $999.99 with ID 1 and you can find it in Aisle 1 in the Electronics Department. We currently have 8 in stock.")
+    # happy path case 2
+    if captured.out == "Kitchen Chair" :
+        if item == "Kitchen Chair" :
+            assert test_item_attributes() == ("Kitchen Chair is $64.99 with ID 22 and you can find it in Aisle 8 in the Furniture Department. We currently have 4 in stock.")
     # invalid input
     if captured.out == "Cheese Balls":
         if item == "Cheese Balls" :
