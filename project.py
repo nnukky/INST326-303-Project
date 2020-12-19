@@ -42,14 +42,13 @@ class Helper:
         """
         Purpose to allow the user to identify what item they are looking for
         Parameters: none
-        Returns:
-            returns a list of products from each category OR
-            returns specific item detail of that option is selected
         Raises:
             IndexError: Raises IndexError if number selected it out of range of list
         Side Effects:
             prints different department selections
             prints each of the 6 items in chosen department   
+            prints a list of products from each category OR
+            prints specific item detail of that option is selected
         """        
         specific_search = input("Do you want to search for a specific item? (yes/no): ").strip().lower()
         if specific_search == "yes":
@@ -103,12 +102,11 @@ class Helper:
         """
         Purpose to allow customer to search by price of items of chosen category
         Parameters:
-            selection(int): category number they are searching in
-        Returns:
-            items at given price within chose category OR
-            proceeds onto narrow_categories    
+            selection(int): category number they are searching in 
         Side Effects:
-            prints price range options    
+            prints price range options  
+            items at given price within chose category OR
+            proceeds onto narrow_categories     
         """     
         price_range_list = [ "<$5" , "$5-$29.99", "$30-$99.99", "$100-$800", ">$800"]
         price = input("Do you wish to narrow down your results by searching by price? (yes/no): ").strip().lower()
