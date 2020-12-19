@@ -135,11 +135,12 @@ class Helper:
                       
     def narrow_categories(self, selection):
         """
-        Purpose to prompt the user with questions to help narrow down options even further
+        Purpose is to prompt the user with questions to help narrow down options even further. 
         Args: 
             selection(int): category number they are searching in
         Side effects: 
-            prints list of possible items to browse determined by their answer to the questions to stdout
+            prints list of possible items to browse determined by their answer to the questions to stdout. If the keyword doesn't exist in the inventory, prints an error message to stdout
+            OR If the user chooses not to narrow, they will be pushed to item_attributes().
         """        
         narrow = input("Would you like to narrow down the category you are searching in? (yes/no) ")
         if narrow == "no" :
@@ -156,7 +157,7 @@ class Helper:
                 
                 electronic_type = input("What type of electronic are you looking for? ")
                 if electronic_type == "phone":
-                    print(["iPhone (ID 1)"])
+                    print(["iPhone 12 (ID 1)"])
                 elif electronic_type == "TV": 
                     print(["Samsung TV  (ID 3)"])
                 elif electronic_type == "Tablet" :
@@ -268,7 +269,7 @@ class Helper:
                                     
     def item_attributes(self):
         """
-        Purpose to ask the user what item they are searching for and shows the user the information of the item they chose
+        Purpose is to ask the user what item they are searching for and show the user the information (name, ID, aisle, department and how many are in stock) of the item they chose
         Raises:
             ValueError: raised if an item doesn't exist in the store    
         Side effects:    
@@ -368,7 +369,7 @@ def find_location(store):
     Args:
         store (dict): warehouse items
     Returns: none
-    Side effects: prints  to console    
+    Side effects: prints to console    
         """
     
     departments = ["Electronics", "Paper Products", "Dairy", "Bakery", "Furniture"]
